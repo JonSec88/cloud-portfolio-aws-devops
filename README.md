@@ -1,111 +1,112 @@
+Replace current README with this version:
+
+---
+
 # AWS Cloud / DevOps Portfolio
 
-Production-focused portfolio demonstrating core AWS and DevOps workflows through structured, reproducible projects. Built to prove job-ready capability for junior cloud and DevOps roles.
+Hands-on AWS and DevOps portfolio built to demonstrate real, job-ready skills through structured, reproducible projects. Every task is executed step-by-step with verifiable outputs, screenshots, and working deployments.
 
 ---
 
-## Overview
+## Live Repository
 
-This repository contains hands-on implementations of:
-
-* EC2 infrastructure deployment and web hosting
-* S3 static website hosting
-* Infrastructure as Code using Terraform
-* Docker containerization
-* CI/CD automation with GitHub Actions
-* Real-world troubleshooting and break/fix scenarios
-
-All projects follow strict execution steps with verifiable outputs.
+[https://github.com/JonSec88/cloud-portfolio-aws-devops](https://github.com/JonSec88/cloud-portfolio-aws-devops)
 
 ---
 
-## Tech Stack
+## Core Skills Demonstrated
 
-* AWS (EC2, S3, IAM)
-* Terraform
-* Docker
-* GitHub Actions
-* Linux (Ubuntu)
-* Apache
+* AWS Infrastructure Deployment (EC2, S3, IAM)
+* Linux Server Management (Ubuntu)
+* Infrastructure as Code (Terraform)
+* Containerization (Docker)
+* CI/CD Automation (GitHub Actions)
+* Networking & Security (Security Groups, access control)
+* Troubleshooting & Break/Fix Scenarios
 
 ---
 
-## Projects
+## Projects Breakdown
 
 ### 1. EC2 Web Server Deployment
 
-Deploy a Linux EC2 instance and configure Apache to serve a live website.
+Provisioned an EC2 instance and configured Apache to host a live website.
 
-**Key Skills**
+**What was done**
 
-* EC2 provisioning
-* SSH access
-* Linux package management
-* Web server configuration
+* Launched Ubuntu EC2 instance
+* Connected via SSH
+* Installed and configured Apache
+* Deployed a test web page
 
 ---
 
-### 2. Break & Fix (Security Groups)
+### 2. Break & Fix: Security Groups
 
-Simulated failure scenario to diagnose and resolve connectivity issues.
+Deliberately misconfigured access rules and diagnosed the failure.
 
-**Key Skills**
+**What was done**
 
-* Security Groups
-* Network troubleshooting
-* Root cause analysis
+* Blocked HTTP access via Security Groups
+* Identified connectivity issue
+* Restored correct inbound rules
+* Verified live site recovery
 
 ---
 
 ### 3. S3 Static Website Hosting
 
-Host a static website using S3 with public access configuration.
+Deployed a static website using AWS S3.
 
-**Key Skills**
+**What was done**
 
-* S3 configuration
-* Bucket policies
-* Static hosting setup
+* Created S3 bucket
+* Enabled static hosting
+* Configured public access policy
+* Deployed HTML site
 
 ---
 
 ### 4. Terraform EC2 Deployment
 
-Automate infrastructure provisioning using Terraform.
+Automated infrastructure creation using Terraform.
 
-**Key Skills**
+**What was done**
 
-* Infrastructure as Code
-* State management
-* AWS provider configuration
+* Wrote Terraform configuration
+* Initialized and applied infrastructure
+* Provisioned EC2 via code
+* Managed state
 
 ---
 
-### 5. Docker Containerized App
+### 5. Docker Containerized Application
 
-Package and run an application inside a Docker container.
+Packaged an application into a Docker container.
 
-**Key Skills**
+**What was done**
 
-* Dockerfile creation
-* Image building
-* Container execution
+* Created Dockerfile
+* Built Docker image
+* Ran container locally
+* Verified application output
 
 ---
 
 ### 6. CI/CD Pipeline (GitHub Actions)
 
-Automate build and deployment workflows.
+Implemented automation pipeline for build and deployment.
 
-**Key Skills**
+**What was done**
 
-* Workflow configuration
-* Automation pipelines
-* Continuous deployment
+* Created workflow YAML
+* Configured triggers
+* Automated build process
+* Verified pipeline execution
 
 ---
 
-## Structure
+## Repository Structure
 
 ```
 cloud-portfolio-aws-devops/
@@ -121,28 +122,29 @@ cloud-portfolio-aws-devops/
 
 ---
 
-## How to Use
+## Execution Standard
 
-Each project folder contains:
+Each project includes:
 
-* Step-by-step instructions
-* Exact commands
-* File structures
+* Exact step-by-step instructions
+* Copy-paste commands
+* File names and locations
 * Expected outputs
-* Screenshots for verification
+* Screenshots for proof
 
-Follow projects in order for a linear progression from fundamentals to automation.
+No ambiguity. No multiple paths. Direct execution only.
 
 ---
 
 ## Outcome
 
-This portfolio demonstrates:
+This portfolio proves the ability to:
 
-* Ability to deploy and manage AWS infrastructure
-* Understanding of DevOps workflows and automation
-* Practical troubleshooting skills
-* Clean, reproducible project execution
+* Deploy and manage AWS infrastructure
+* Automate environments using Terraform
+* Build and run containerized applications
+* Implement CI/CD pipelines
+* Diagnose and fix real-world issues
 
 ---
 
@@ -154,7 +156,7 @@ This portfolio demonstrates:
 
 ---
 
-## Repository
+## Contact
 
-GitHub: [https://github.com/JonSec88/cloud-portfolio-aws-devops](https://github.com/JonSec88/cloud-portfolio-aws-devops)
-
+GitHub: [https://github.com/JonSec88](https://github.com/JonSec88)
+Email: [Jonhinds9@gmail.com](mailto:Jonhinds9@gmail.com)

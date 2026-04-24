@@ -29,7 +29,9 @@ User → S3 Website → API Gateway → Lambda → DynamoDB
 ## 🌐 Live Projects
 
 ### 🔹 Flask App (Docker + EC2)
-👉 http://908535
+👉 http://3.25.181.34
+Public IPv4 address copied
+
 
 ### 🔹 Cloud Resume Website
 👉 http://YOUR-S3-WEBSITE-ENDPOINT

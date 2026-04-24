@@ -1,16 +1,17 @@
 # Task 4 - Terraform EC2 Deployment
 
 ## Objective
-Provision AWS EC2 using Infrastructure as Code.
+Deploy AWS EC2 instance using Infrastructure as Code (Terraform).
 
 ## What Was Done
-- Installed Terraform
-- Created main.tf configuration
-- Defined AWS provider
-- Deployed EC2 instance using Terraform
+- Installed and configured Terraform
+- Configured AWS CLI authentication
+- Created EC2 instance using Terraform
+- Verified deployment in AWS Console
 
-## Commands Used
+## Terraform Execution
 
 ```bash
 terraform init
+terraform plan
 terraform apply

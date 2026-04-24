@@ -108,13 +108,6 @@ Manual AWS → Troubleshooting → Static Hosting → IaC → Containers → Aut
 
 ---
 
-## Live Repository
+## Architecture Diagram
 
-https://github.com/JonSec88/cloud-portfolio-aws-devops
-
----
-
-## Author
-
-GitHub: https://github.com/JonSec88  
-Email: Jonhinds9@gmail.com
+Developer → GitHub → GitHub Actions → Docker Build → Docker Hub → EC2 → Running Application

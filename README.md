@@ -1,40 +1,54 @@
-# Jon Hinds | Cloud DevOps Portfolio | AWS End-to-End Deployment 
+# Jon Hinds | Cloud DevOps Portfolio | AWS End-to-End Deployment
 
 ## 📌 Overview
 
-This project demonstrates a complete DevOps pipeline from code to production using AWS and Docker.
+This project demonstrates a complete DevOps workflow from development to production using AWS, Docker, and CI/CD automation.
 
-It showcases:
-
-- Infrastructure as Code (Terraform)
-- Containerisation (Docker)
-- CI/CD (GitHub Actions)
-- Cloud Deployment (AWS EC2 & S3)
-- Serverless Architecture (Lambda, API Gateway, DynamoDB)
+It is designed to reflect real-world engineering practices, focusing on delivering and running cloud-native applications.
 
 ---
 
 ## 🏗️ Architecture
 
-### System 1 — CI/CD Deployment Pipeline
+### System 1 — CI/CD Container Deployment
 
-GitHub → GitHub Actions → Docker Build → Docker Hub → EC2 → Live Application
+GitHub → GitHub Actions → Docker Build → Docker Hub → AWS EC2 → Live Application
 
-### System 2 — Serverless Resume Website
+### System 2 — Serverless Cloud Resume
 
-User → S3 Website → API Gateway → Lambda → DynamoDB
+User → S3 Static Website → API Gateway → Lambda → DynamoDB
 
 ---
 
 ## 🌐 Live Projects
 
-### 🔹 Flask App (Docker + EC2)
+### 🔹 Flask Application — Docker + AWS EC2
+
+Containerised Flask application deployed to AWS EC2 using Docker, built and delivered via CI/CD.
+
+Live Application:  
 👉 http://3.25.181.34
-Public IPv4 address copied
 
+Key Capabilities Demonstrated:
+- Automated Docker image build and push via CI/CD  
+- Container deployment on EC2  
+- Network configuration and port exposure  
+- Public-facing application hosting  
 
-### 🔹 Cloud Resume Website
-👉 http://YOUR-S3-WEBSITE-ENDPOINT
+---
+
+### 🔹 Cloud Resume — Serverless AWS Architecture
+
+Static resume website with a dynamic visitor counter powered by serverless AWS services.
+
+Live Website:  
+👉 http://YOUR-S3-ENDPOINT
+
+Key Capabilities Demonstrated:
+- Static site hosting via S3  
+- API-driven backend using Lambda + API Gateway  
+- Persistent visitor tracking with DynamoDB  
+- Lightweight serverless architecture  
 
 ---
 
@@ -51,46 +65,46 @@ Public IPv4 address copied
 ## 📂 Project Structure
 
 cloud-portfolio-aws-devops
-│
-├─ app                → Flask API (Dockerised application)
-├─ terraform          → AWS infrastructure (EC2 via IaC)
-├─ .github/workflows  → CI/CD pipelines (build & push Docker image)
-├─ resume-site        → S3 static site + serverless API integration
-├─ screenshots        → Deployment proof (pipeline, EC2, live app)
-│
-└─ README.md          → Project overview & architecture
+
+├─ app                → Flask API (Dockerised application)  
+├─ terraform          → Infrastructure as Code (EC2 provisioning)  
+├─ .github/workflows  → CI/CD pipelines  
+├─ resume-site        → S3 static site + API integration  
+├─ screenshots        → Deployment proof  
+│  
+└─ README.md          → Project documentation  
 
 ---
 
 ## 📸 Proof of Work
 
-### CI/CD Pipeline
+### CI/CD Pipeline  
 pipeline
 
-### Docker Running on EC2
+### Docker Container Running on EC2  
 ec2
 
-### Live Application
+### Live Application Output  
 app
 
 ---
 
 ## 🔧 Key Features
 
-- Automated Docker build & push via CI/CD
-- Infrastructure provisioning using Terraform
-- Container deployed on AWS EC2
-- Serverless visitor counter using Lambda + DynamoDB
-- Static website hosted on S3
+- End-to-end CI/CD pipeline from GitHub to production  
+- Dockerised application deployment on AWS EC2  
+- Infrastructure provisioning using Terraform  
+- Serverless backend with Lambda and DynamoDB  
+- Publicly accessible cloud-hosted applications  
 
 ---
 
 ## 📈 What This Demonstrates
 
-- End-to-end deployment capability
-- Real-world DevOps workflow
-- Cloud-native architecture understanding
-- Production-style project structure
+- Ability to design and deliver complete cloud systems  
+- Understanding of DevOps workflows and automation  
+- Practical experience with AWS production services  
+- Deployment, networking, and infrastructure management  
 
 ---
 

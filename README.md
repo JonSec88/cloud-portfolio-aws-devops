@@ -1,84 +1,77 @@
-# Cloud DevOps Portfolio — AWS End-to-End Deployment
+# AWS Cloud DevOps Portfolio with Docker CI CD and Serverless Architecture
 
 ## Overview
-
-This repository demonstrates a complete DevOps workflow from development to production using AWS and Docker. It highlights real-world deployment practices including CI/CD, infrastructure as code, containerisation, and serverless architecture.
-
----
+This project demonstrates a complete cloud DevOps workflow from development to production using Amazon Web Services and Docker. It includes continuous integration and deployment, infrastructure as code, container deployment, and a serverless application.
 
 ## Architecture
 
-System 1: CI/CD Deployment Pipeline  
-GitHub → GitHub Actions → Docker Build → Docker Hub → AWS EC2 → Live Application
+System 1 CI CD Deployment Pipeline  
+GitHub → GitHub Actions → Docker Build → Docker Hub → AWS EC2 → Live Application  
 
-System 2: Serverless Resume Platform  
-User → S3 Static Website → API Gateway → Lambda → DynamoDB
-
----
+System 2 Serverless Resume Platform  
+User → S3 Static Website → API Gateway → Lambda → DynamoDB  
 
 ## Live Projects
 
-Flask Application (Docker + EC2)  
-http://3.25.181.34
+Flask Application running on AWS EC2  
+http://3.25.181.34  
 
 Cloud Resume Website  
-http://YOUR-S3-WEBSITE-ENDPOINT
-
----
+http://YOUR-S3-WEBSITE-ENDPOINT  
 
 ## Tech Stack
 
-AWS (EC2, S3, Lambda, API Gateway, DynamoDB)  
+Amazon Web Services: EC2, S3, Lambda, API Gateway, DynamoDB  
 Docker  
 Terraform  
 GitHub Actions  
-Python (Flask)
-
----
+Python Flask  
 
 ## Project Structure
 
-cloud-portfolio-aws-devops
+cloud-portfolio-aws-devops/
 
-app/                Flask application (Dockerised)  
-terraform/          Infrastructure as Code (EC2 provisioning)  
-.github/workflows/  CI/CD pipeline (build and push Docker image)  
-resume-site/        Static resume site with API integration  
-screenshots/        Deployment proof (pipeline, EC2, live app)  
+app/  
+Flask application container  
 
-README.md           Project documentation  
+terraform/  
+Infrastructure as code for EC2  
 
----
+.github/workflows/  
+CI CD pipeline automation  
+
+resume-site/  
+Static website with API integration  
+
+screenshots/  
+Deployment proof and results  
+
+README.md  
+Project documentation  
 
 ## Proof of Work
 
-CI/CD pipeline successfully builds and pushes Docker image  
-Container is running on EC2 and publicly accessible  
-Live application reachable via public IP  
+CI CD pipeline builds and pushes Docker image automatically  
+Container runs on AWS EC2 and is publicly accessible  
+Live application responds via public IP address  
 Serverless API updates visitor counter dynamically  
-
----
 
 ## Key Features
 
-Automated Docker build and push via CI/CD  
+Automated Docker build and push using GitHub Actions  
 Infrastructure provisioning using Terraform  
 Container deployment on AWS EC2  
-Serverless visitor counter using Lambda and DynamoDB  
-Static website hosted on S3  
-
----
+Serverless backend using Lambda and DynamoDB  
+Static website hosted using S3  
 
 ## What This Demonstrates
 
-Ability to design and deploy end-to-end cloud systems  
+Ability to deploy complete cloud systems end to end  
 Understanding of DevOps workflows and automation  
-Experience with cloud-native and serverless architecture  
-Production-style project structure and delivery  
-
----
+Experience with AWS cloud services and serverless design  
+Production style project structure and delivery  
 
 ## Author
 
 Jon Hinds  
-Cloud / DevOps Engineer
+Cloud DevOps Engineer

@@ -1,4 +1,4 @@
-# 🚀 Cloud DevOps Portfolio — AWS End-to-End Deployment
+# Jon Hinds | Cloud DevOps Portfolio | AWS End-to-End Deployment 
 
 ## 📌 Overview
 

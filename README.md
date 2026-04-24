@@ -48,13 +48,15 @@ User → S3 Website → API Gateway → Lambda → DynamoDB
 
 ## 📂 Project Structure
 
-/cloud-portfolio-aws-devops
-│── app/
-│── terraform/
-│── .github/workflows/
-│── resume-site/
-│── screenshots/
-│── README.md
+cloud-portfolio-aws-devops
+│
+├─ app                → Flask API (Dockerised application)
+├─ terraform          → AWS infrastructure (EC2 via IaC)
+├─ .github/workflows  → CI/CD pipelines (build & push Docker image)
+├─ resume-site        → S3 static site + serverless API integration
+├─ screenshots        → Deployment proof (pipeline, EC2, live app)
+│
+└─ README.md          → Project overview & architecture
 
 ---
 

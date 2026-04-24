@@ -1,113 +1,96 @@
-# AWS DevOps Portfolio
+# 🚀 Cloud DevOps Portfolio — AWS End-to-End Deployment
 
-End-to-end cloud system demonstrating:
+## 📌 Overview
 
-- AWS EC2 deployment
-- S3 static hosting
-- Terraform infrastructure automation
-- Docker containerisation
-- GitHub Actions CI/CD pipeline
+This project demonstrates a complete DevOps pipeline from code to production using AWS and Docker.
 
-## Architecture Flow
+It showcases:
 
-Git Push → CI → Docker Build → Registry → Deploy → Logs
-
-## Live System
-
-https://github.com/JonSec88/cloud-portfolio-aws-devops
-
-## Tools
-
-AWS | Terraform | Docker | GitHub Actions | Linux
-
-
-
-# AWS DevOps Portfolio — End-to-End Cloud Engineering System
-
-## Overview
-This project demonstrates a complete cloud engineering lifecycle built through progressive infrastructure layers. Each stage was intentionally chosen to simulate real-world production systems, starting from manual cloud provisioning and evolving into fully automated CI/CD workflows.
-
-The goal is not just deployment, but demonstrating engineering reasoning: why each tool was introduced, what problem it solves, and how complexity is reduced over time through automation.
+- Infrastructure as Code (Terraform)
+- Containerisation (Docker)
+- CI/CD (GitHub Actions)
+- Cloud Deployment (AWS EC2 & S3)
+- Serverless Architecture (Lambda, API Gateway, DynamoDB)
 
 ---
 
-# Engineering Progression (WHY THIS ORDER)
+## 🏗️ Architecture
 
-This portfolio follows a real DevOps maturity model:
+### System 1 — CI/CD Deployment Pipeline
 
-### 1. Manual Infrastructure (AWS EC2)
-Why:
-- Understand compute fundamentals without abstraction
-- Learn SSH, Linux administration, and networking basics
-- Establish baseline cloud operations
+GitHub → GitHub Actions → Docker Build → Docker Hub → EC2 → Live Application
 
-Outcome:
-- Fully working web server on EC2
+### System 2 — Serverless Resume Website
+
+User → S3 Website → API Gateway → Lambda → DynamoDB
 
 ---
 
-### 2. Network Failure Simulation (Security Groups)
-Why:
-- Real cloud failures are usually misconfiguration, not code
-- Learn how AWS security layers control access
-- Build troubleshooting discipline
+## 🌐 Live Projects
 
-Outcome:
-- Fixed blocked inbound traffic and restored service
+### 🔹 Flask App (Docker + EC2)
+👉 http://YOUR-EC2-PUBLIC-IP
 
----
-
-### 3. Static Cloud Hosting (S3)
-Why:
-- Separate compute from static delivery
-- Learn object storage vs server-based hosting
-- Understand public access control models
-
-Outcome:
-- Fully hosted static website on S3
+### 🔹 Cloud Resume Website
+👉 http://YOUR-S3-WEBSITE-ENDPOINT
 
 ---
 
-### 4. Infrastructure as Code (Terraform)
-Why:
-- Manual AWS is not scalable or repeatable
-- Infrastructure must be version-controlled
-- Enables reproducibility and automation
+## ⚙️ Tech Stack
 
-Outcome:
-- EC2 deployed using declarative configuration
-
----
-
-### 5. Containerisation (Docker)
-Why:
-- Solve environment inconsistency problem
-- Package applications with dependencies
-- Enable portable deployment
-
-Outcome:
-- Flask app running inside containerised environment
+- AWS (EC2, S3, Lambda, API Gateway, DynamoDB)
+- Docker
+- Terraform
+- GitHub Actions
+- Python (Flask)
 
 ---
 
-### 6. CI/CD Automation (GitHub Actions)
-Why:
-- Manual builds are not scalable
-- CI ensures every change is validated automatically
-- Introduces production-style deployment pipelines
+## 📂 Project Structure
 
-Outcome:
-- Automated Docker build triggered on every push
-
----
-
-# Architecture Evolution
-
-```text id="r3"
-Manual AWS → Troubleshooting → Static Hosting → IaC → Containers → Automation 
+/cloud-portfolio-aws-devops
+│── app/
+│── terraform/
+│── .github/workflows/
+│── resume-site/
+│── screenshots/
+│── README.md
 
 ---
 
-## Architecture Diagram
+## 📸 Proof of Work
 
-Developer → GitHub → GitHub Actions → Docker Build → Docker Hub → EC2 → Running Application
+### CI/CD Pipeline
+pipeline
+
+### Docker Running on EC2
+ec2
+
+### Live Application
+app
+
+---
+
+## 🔧 Key Features
+
+- Automated Docker build & push via CI/CD
+- Infrastructure provisioning using Terraform
+- Container deployed on AWS EC2
+- Serverless visitor counter using Lambda + DynamoDB
+- Static website hosted on S3
+
+---
+
+## 📈 What This Demonstrates
+
+- End-to-end deployment capability
+- Real-world DevOps workflow
+- Cloud-native architecture understanding
+- Production-style project structure
+
+---
+
+## 👤 Author
+
+Jon Hinds  
+Aspiring Cloud / DevOps Enginee

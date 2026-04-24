@@ -1,3 +1,27 @@
+# AWS DevOps Portfolio
+
+End-to-end cloud system demonstrating:
+
+- AWS EC2 deployment
+- S3 static hosting
+- Terraform infrastructure automation
+- Docker containerisation
+- GitHub Actions CI/CD pipeline
+
+## Architecture Flow
+
+Git Push → CI → Docker Build → Registry → Deploy → Logs
+
+## Live System
+
+https://github.com/JonSec88/cloud-portfolio-aws-devops
+
+## Tools
+
+AWS | Terraform | Docker | GitHub Actions | Linux
+
+
+
 # AWS DevOps Portfolio — End-to-End Cloud Engineering System
 
 ## Overview

@@ -1,21 +1,40 @@
-# Task 1 - EC2 Web Server Deployment
+# Task 1 — AWS EC2 Web Server Deployment
+
+## Overview
+Provisioned and configured a virtual server on AWS EC2 to host a basic web server. This demonstrates foundational cloud infrastructure deployment and remote server access.
+
+---
 
 ## Objective
-Deploy a live Apache web server on AWS EC2.
+Deploy and access a publicly reachable EC2 instance to understand compute provisioning, security groups, and SSH access in AWS.
 
-## What Was Done
-- Launched EC2 instance (Amazon Linux 2023, t3.micro)
-- Configured Security Group (SSH + HTTP)
-- Connected via SSH using .pem key
-- Installed Apache (httpd)
-- Started and enabled web server
-- Deployed custom HTML page
+---
 
-## Commands Used
+## Tools
+- AWS EC2
+- Amazon Linux 2
+- SSH (Terminal)
+- AWS Security Groups
 
+---
+
+## Architecture
+User → Internet → AWS Security Group → EC2 Instance → Web Server
+
+---
+
+## Implementation
+
+### 1. Launch EC2 Instance
+- Selected Amazon Linux 2 AMI
+- Chose t2.micro instance type
+- Configured key pair for SSH access
+
+### 2. Configure Security Group
+Allowed inbound traffic:
+- SSH (22)
+- HTTP (80)
+
+### 3. Connect via SSH
 ```bash
-chmod 400 ec2-key.pem
-ssh -i ec2-key.pem ec2-user@YOUR_PUBLIC_IP
-sudo dnf install httpd -y
-sudo systemctl start httpd
-sudo systemctl enable httpd
+ssh -i key.pem ec2-user@<public-ip>

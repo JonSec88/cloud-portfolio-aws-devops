@@ -1,10 +1,97 @@
-Replace current README with this version:
+# AWS DevOps Portfolio — Cloud Engineering Projects
+
+## Overview
+This repository demonstrates a complete AWS DevOps workflow across multiple real-world cloud engineering scenarios. It covers infrastructure provisioning, security configuration, storage hosting, infrastructure as code, and containerisation.
+
+Each task represents a production-style engineering layer, progressing from basic compute to automated infrastructure and application deployment.
 
 ---
 
-# AWS Cloud / DevOps Portfolio
+# Portfolio Structure
 
-Hands-on AWS and DevOps portfolio built to demonstrate real, job-ready skills through structured, reproducible projects. Every task is executed step-by-step with verifiable outputs, screenshots, and working deployments.
+## Task 1 — EC2 Web Server Deployment
+Provisioned a virtual machine in AWS EC2 and configured a basic web server.
+
+**Key Skills**
+- EC2 provisioning
+- Security groups
+- Linux server setup
+- SSH access
+
+---
+
+## Task 2 — Security Group Break/Fix
+Diagnosed and fixed misconfigured AWS Security Groups blocking application access.
+
+**Key Skills**
+- Network troubleshooting
+- AWS security groups
+- Inbound/outbound rule configuration
+- Incident resolution
+
+---
+
+## Task 3 — S3 Static Website Hosting
+Hosted a static website using Amazon S3 with public access configuration.
+
+**Key Skills**
+- S3 bucket configuration
+- Static website hosting
+- Bucket policies
+- Public access control
+
+---
+
+## Task 4 — Terraform EC2 Infrastructure (IaC)
+Provisioned EC2 infrastructure using Terraform instead of manual AWS setup.
+
+**Key Skills**
+- Infrastructure as Code (Terraform)
+- AWS provider configuration
+- Automated provisioning
+- State management
+
+---
+
+## Task 5 — Docker Containerised Application
+Built and deployed a containerised Python Flask application using Docker.
+
+**Key Skills**
+- Containerisation
+- Docker build/run workflow
+- Application packaging
+- Local deployment testing
+
+---
+
+# Architecture Progression
+
+Manual Cloud Setup → AWS Console → Security Hardening → Static Hosting → Infrastructure as Code → Containerisation
+
+---
+
+# Tools Used Across Portfolio
+- AWS (EC2, S3, IAM, Security Groups)
+- Terraform
+- Docker
+- Linux (Amazon Linux)
+- Git & GitHub
+- Python (Flask)
+
+---
+
+# Objective of Portfolio
+To demonstrate end-to-end cloud engineering capability, moving from manual infrastructure to fully automated and containerised deployments.
+
+---
+
+# Outcome
+This portfolio demonstrates practical DevOps capability across:
+- Compute provisioning
+- Cloud security
+- Static web hosting
+- Infrastructure automation
+- Application containerisation
 
 ---
 
@@ -13,150 +100,6 @@ Hands-on AWS and DevOps portfolio built to demonstrate real, job-ready skills th
 [https://github.com/JonSec88/cloud-portfolio-aws-devops](https://github.com/JonSec88/cloud-portfolio-aws-devops)
 
 ---
-
-## Core Skills Demonstrated
-
-* AWS Infrastructure Deployment (EC2, S3, IAM)
-* Linux Server Management (Ubuntu)
-* Infrastructure as Code (Terraform)
-* Containerization (Docker)
-* CI/CD Automation (GitHub Actions)
-* Networking & Security (Security Groups, access control)
-* Troubleshooting & Break/Fix Scenarios
-
----
-
-## Projects Breakdown
-
-### 1. EC2 Web Server Deployment
-
-Provisioned an EC2 instance and configured Apache to host a live website.
-
-**What was done**
-
-* Launched Ubuntu EC2 instance
-* Connected via SSH
-* Installed and configured Apache
-* Deployed a test web page
-
----
-
-### 2. Break & Fix: Security Groups
-
-Deliberately misconfigured access rules and diagnosed the failure.
-
-**What was done**
-
-* Blocked HTTP access via Security Groups
-* Identified connectivity issue
-* Restored correct inbound rules
-* Verified live site recovery
-
----
-
-### 3. S3 Static Website Hosting
-
-Deployed a static website using AWS S3.
-
-**What was done**
-
-* Created S3 bucket
-* Enabled static hosting
-* Configured public access policy
-* Deployed HTML site
-
----
-
-### 4. Terraform EC2 Deployment
-
-Automated infrastructure creation using Terraform.
-
-**What was done**
-
-* Wrote Terraform configuration
-* Initialized and applied infrastructure
-* Provisioned EC2 via code
-* Managed state
-
----
-
-### 5. Docker Containerized Application
-
-Packaged an application into a Docker container.
-
-**What was done**
-
-* Created Dockerfile
-* Built Docker image
-* Ran container locally
-* Verified application output
-
----
-
-### 6. CI/CD Pipeline (GitHub Actions)
-
-Implemented automation pipeline for build and deployment.
-
-**What was done**
-
-* Created workflow YAML
-* Configured triggers
-* Automated build process
-* Verified pipeline execution
-
----
-
-## Repository Structure
-
-```
-cloud-portfolio-aws-devops/
-│
-├── ec2-web-server/
-├── break-fix-security-groups/
-├── s3-static-site/
-├── terraform-ec2/
-├── docker-app/
-├── cicd-github-actions/
-└── README.md
-```
-
----
-
-## Execution Standard
-
-Each project includes:
-
-* Exact step-by-step instructions
-* Copy-paste commands
-* File names and locations
-* Expected outputs
-* Screenshots for proof
-
-No ambiguity. No multiple paths. Direct execution only.
-
----
-
-## Outcome
-
-This portfolio proves the ability to:
-
-* Deploy and manage AWS infrastructure
-* Automate environments using Terraform
-* Build and run containerized applications
-* Implement CI/CD pipelines
-* Diagnose and fix real-world issues
-
----
-
-## Target Roles
-
-* Junior Cloud Engineer
-* Cloud Support Engineer
-* Junior DevOps Engineer
-
----
-
-## Contact
 
 GitHub: [https://github.com/JonSec88](https://github.com/JonSec88)
 Email: [Jonhinds9@gmail.com](mailto:Jonhinds9@gmail.com)

@@ -1,98 +1,86 @@
-# AWS DevOps Portfolio — Cloud Engineering Projects
+# AWS DevOps Portfolio — End-to-End Cloud Engineering System
 
 ## Overview
-This repository demonstrates a complete AWS DevOps workflow across multiple real-world cloud engineering scenarios. It covers infrastructure provisioning, security configuration, storage hosting, infrastructure as code, and containerisation.
+This project demonstrates a complete cloud engineering lifecycle built through progressive infrastructure layers. Each stage was intentionally chosen to simulate real-world production systems, starting from manual cloud provisioning and evolving into fully automated CI/CD workflows.
 
-Each task represents a production-style engineering layer, progressing from basic compute to automated infrastructure and application deployment.
-
----
-
-# Portfolio Structure
-
-## Task 1 — EC2 Web Server Deployment
-Provisioned a virtual machine in AWS EC2 and configured a basic web server.
-
-**Key Skills**
-- EC2 provisioning
-- Security groups
-- Linux server setup
-- SSH access
+The goal is not just deployment, but demonstrating engineering reasoning: why each tool was introduced, what problem it solves, and how complexity is reduced over time through automation.
 
 ---
 
-## Task 2 — Security Group Break/Fix
-Diagnosed and fixed misconfigured AWS Security Groups blocking application access.
+# Engineering Progression (WHY THIS ORDER)
 
-**Key Skills**
-- Network troubleshooting
-- AWS security groups
-- Inbound/outbound rule configuration
-- Incident resolution
+This portfolio follows a real DevOps maturity model:
 
----
+### 1. Manual Infrastructure (AWS EC2)
+Why:
+- Understand compute fundamentals without abstraction
+- Learn SSH, Linux administration, and networking basics
+- Establish baseline cloud operations
 
-## Task 3 — S3 Static Website Hosting
-Hosted a static website using Amazon S3 with public access configuration.
-
-**Key Skills**
-- S3 bucket configuration
-- Static website hosting
-- Bucket policies
-- Public access control
+Outcome:
+- Fully working web server on EC2
 
 ---
 
-## Task 4 — Terraform EC2 Infrastructure (IaC)
-Provisioned EC2 infrastructure using Terraform instead of manual AWS setup.
+### 2. Network Failure Simulation (Security Groups)
+Why:
+- Real cloud failures are usually misconfiguration, not code
+- Learn how AWS security layers control access
+- Build troubleshooting discipline
 
-**Key Skills**
-- Infrastructure as Code (Terraform)
-- AWS provider configuration
-- Automated provisioning
-- State management
-
----
-
-## Task 5 — Docker Containerised Application
-Built and deployed a containerised Python Flask application using Docker.
-
-**Key Skills**
-- Containerisation
-- Docker build/run workflow
-- Application packaging
-- Local deployment testing
+Outcome:
+- Fixed blocked inbound traffic and restored service
 
 ---
 
-# Architecture Progression
+### 3. Static Cloud Hosting (S3)
+Why:
+- Separate compute from static delivery
+- Learn object storage vs server-based hosting
+- Understand public access control models
 
-Manual Cloud Setup → AWS Console → Security Hardening → Static Hosting → Infrastructure as Code → Containerisation
-
----
-
-# Tools Used Across Portfolio
-- AWS (EC2, S3, IAM, Security Groups)
-- Terraform
-- Docker
-- Linux (Amazon Linux)
-- Git & GitHub
-- Python (Flask)
+Outcome:
+- Fully hosted static website on S3
 
 ---
 
-# Objective of Portfolio
-To demonstrate end-to-end cloud engineering capability, moving from manual infrastructure to fully automated and containerised deployments.
+### 4. Infrastructure as Code (Terraform)
+Why:
+- Manual AWS is not scalable or repeatable
+- Infrastructure must be version-controlled
+- Enables reproducibility and automation
+
+Outcome:
+- EC2 deployed using declarative configuration
 
 ---
 
-# Outcome
-This portfolio demonstrates practical DevOps capability across:
-- Compute provisioning
-- Cloud security
-- Static web hosting
-- Infrastructure automation
-- Application containerisation
+### 5. Containerisation (Docker)
+Why:
+- Solve environment inconsistency problem
+- Package applications with dependencies
+- Enable portable deployment
 
+Outcome:
+- Flask app running inside containerised environment
+
+---
+
+### 6. CI/CD Automation (GitHub Actions)
+Why:
+- Manual builds are not scalable
+- CI ensures every change is validated automatically
+- Introduces production-style deployment pipelines
+
+Outcome:
+- Automated Docker build triggered on every push
+
+---
+
+# Architecture Evolution
+
+```text id="r3"
+Manual AWS → Troubleshooting → Static Hosting → IaC → Containers → CI/CD Automation
 ---
 
 ## Live Repository

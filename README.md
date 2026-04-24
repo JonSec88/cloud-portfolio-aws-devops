@@ -80,14 +80,17 @@ Outcome:
 # Architecture Evolution
 
 ```text id="r3"
-Manual AWS → Troubleshooting → Static Hosting → IaC → Containers → CI/CD Automation
+Manual AWS → Troubleshooting → Static Hosting → IaC → Containers → Automation 
+
 ---
 
 ## Live Repository
 
-[https://github.com/JonSec88/cloud-portfolio-aws-devops](https://github.com/JonSec88/cloud-portfolio-aws-devops)
+https://github.com/JonSec88/cloud-portfolio-aws-devops
 
 ---
 
-GitHub: [https://github.com/JonSec88](https://github.com/JonSec88)
-Email: [Jonhinds9@gmail.com](mailto:Jonhinds9@gmail.com)
+## Author
+
+GitHub: https://github.com/JonSec88  
+Email: Jonhinds9@gmail.com

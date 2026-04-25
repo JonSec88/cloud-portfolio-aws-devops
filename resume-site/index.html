@@ -1,26 +1,136 @@
-# Task 3 - S3 Static Website Hosting
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Jonathan Hinds | Cloud & DevOps Engineer</title>
 
-## Objective
-Host a static website using AWS S3.
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0b1220;
+    color: #e5e7eb;
+}
+.container {
+    max-width: 950px;
+    margin: auto;
+    padding: 40px;
+}
+h1 { font-size: 40px; margin-bottom: 5px; }
+h2 { margin-top: 30px; border-bottom: 1px solid #334155; padding-bottom: 5px; }
 
-## What Was Done
-- Created S3 bucket
-- Disabled block public access
-- Uploaded index.html
-- Enabled static website hosting
-- Applied public read bucket policy
+.card {
+    background: #111827;
+    padding: 16px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
 
-## Result
-Website is publicly accessible via S3 endpoint.
+.badge {
+    display: inline-block;
+    background: #1f2937;
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin: 3px;
+    font-size: 13px;
+}
 
-## Proof
-Screenshots will include:
-- Bucket configuration
-- File upload
-- Static hosting enabled
-- Live website URL
+a { color: #38bdf8; text-decoration: none; }
+.small { color: #94a3b8; font-size: 14px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+</style>
+</head>
 
-## Skills
-- AWS S3
-- Static website hosting
-- Bucket policies
+<body>
+<div class="container">
+
+<h1>Jonathan Hinds</h1>
+<p class="small">Cloud & DevOps Engineer | AWS | CI/CD | Terraform | Docker</p>
+
+<p>
+GitHub: https://github.com/JonSec88 <br>
+Location: UK / Thailand
+</p>
+
+<h2>🚀 Live Systems</h2>
+
+<div class="grid">
+
+<div class="card">
+<strong>Serverless Cloud Resume System</strong><br><br>
+✔ AWS S3 Static Hosting<br>
+✔ API Gateway + Lambda<br>
+✔ DynamoDB Visitor Counter<br>
+✔ Event-driven serverless architecture<br><br>
+
+<a href="http://jonsec88-s3-site-83927-579986815910-ap-southeast-2-an.s3-website-ap-southeast-2.amazonaws.com/">
+Live Resume Site
+</a>
+</div>
+
+<div class="card">
+<strong>EC2 CI/CD Deployment Pipeline</strong><br><br>
+✔ Dockerised Flask application<br>
+✔ GitHub Actions CI/CD pipeline<br>
+✔ EC2 deployment with exposed service<br>
+✔ Linux-based container runtime<br><br>
+
+<a href="http://3.25.181.34">Live EC2 App</a>
+</div>
+
+</div>
+
+<h2>🧠 Architecture Overview</h2>
+
+<div class="card">
+Frontend → S3 Static Website<br>
+Backend → API Gateway → Lambda<br>
+Database → DynamoDB (visitor tracking)<br>
+Compute → EC2 (Docker container)<br>
+CI/CD → GitHub Actions<br>
+IaC → Terraform (in repo)
+</div>
+
+<h2>⚙️ Technical Skills</h2>
+
+<div class="card">
+<span class="badge">AWS EC2</span>
+<span class="badge">AWS S3</span>
+<span class="badge">Lambda</span>
+<span class="badge">API Gateway</span>
+<span class="badge">DynamoDB</span>
+<span class="badge">Docker</span>
+<span class="badge">CI/CD</span>
+<span class="badge">GitHub Actions</span>
+<span class="badge">Terraform</span>
+<span class="badge">Linux</span>
+<span class="badge">Python Flask</span>
+</div>
+
+<h2>📌 Experience</h2>
+
+<div class="card">
+HGV Driver (UK) — 2014–2025<br>
+Operational execution in high-responsibility environments, logistics, safety-critical workflows.
+
+<br><br>
+
+Telecoms Engineer — 2008–2014<br>
+Network installation, fault resolution, structured cabling, broadband infrastructure.
+</div>
+
+<h2>📊 Live Visitor Counter</h2>
+<p>Visitors: <strong><span id="visits">Loading...</span></strong></p>
+
+</div>
+
+<script>
+fetch("https://gc261tgqn4.execute-api.ap-southeast-2.amazonaws.com/visit")
+.then(r => r.json())
+.then(d => {
+    document.getElementById("visits").innerText = d.visits;
+});
+</script>
+
+</body>
+</html>

@@ -1,70 +1,87 @@
-# 🚀 Cloud Portfolio DevOps Project (AWS + Docker + CI/CD)
+# 🚀 Cloud DevOps Portfolio — AWS Infrastructure Engineering Project
 
-## 📌 Overview
-End-to-end DevOps project demonstrating real-world cloud deployment using AWS, Docker, and CI/CD automation.
-
-This project shows production-style deployment of:
-- A containerized web application on AWS EC2
-- A static website hosted on AWS S3
-- A CI/CD pipeline using GitHub Actions
-- A structured multi-service repository
+## 👤 Jonathan Hinds
+Cloud & DevOps Engineer (Junior Level)
+GitHub: https://github.com/JonSec88
 
 ---
 
-## 🌐 Live Deployments
+# 📌 Overview
 
-### EC2 Application (Docker Container)
+This repository demonstrates a complete end-to-end cloud engineering workflow across AWS services, containerisation, serverless architecture, and CI/CD automation.
+
+The project simulates real-world production systems using multiple deployment models to showcase practical DevOps skills.
+
+---
+
+# 🌐 Live Systems
+
+## 🖥 EC2 Hosted Application
 http://3.25.181.34
 
-### S3 Static Resume Site
+- Traditional Linux web server deployment
+- Apache-based static hosting
+- Network configuration and public access
+
+---
+
+## ☁️ Serverless Resume System (AWS S3 + Lambda)
 http://jonsec88-s3-site-83927-579986815910-ap-southeast-2-an.s3-website-ap-southeast-2.amazonaws.com/
 
----
-
-## ⚙️ CI/CD Pipeline
-Triggered on every push to `main`:
-
-1. GitHub Actions runs
-2. Docker image is built
-3. Image is pushed to Docker Hub
-4. EC2 instance pulls and runs updated container
+- Static website hosted on S3
+- Serverless API using Lambda + API Gateway
+- DynamoDB visitor tracking system
 
 ---
 
-## 🧰 Tech Stack
-- AWS EC2 (Amazon Linux 2023)
-- AWS S3 (Static hosting)
-- Docker
+# ⚙️ System Architecture Overview
+
+This project demonstrates multiple cloud architecture patterns:
+
+### 1. Traditional Infrastructure (EC2)
+- Linux server provisioning
+- Web server configuration (Apache)
+- Public IP routing
+
+### 2. Containerised Deployment (Docker)
+- Flask application containerisation
+- Image build and deployment pipeline
+- CI/CD integration via GitHub Actions
+
+### 3. Serverless Architecture (S3 + Lambda)
+- Static frontend hosting on S3
+- Backend logic via Lambda functions
+- API Gateway routing layer
+- DynamoDB persistence layer
+
+---
+
+# 🧰 Tech Stack
+
+- AWS EC2 (Compute)
+- AWS S3 (Static Hosting)
+- AWS Lambda (Serverless compute)
+- API Gateway (Routing layer)
+- DynamoDB (NoSQL database)
+- Docker (Containerisation)
 - GitHub Actions (CI/CD)
-- Python (Flask app)
-- Linux administration
-- Bash scripting
+- Linux (System administration)
+- Python (Flask backend)
 
 ---
 
-## 📁 Repository Structure
-app/                      → Flask application  
-resume-site/             → Static portfolio website  
-terraform/               → Infrastructure as Code (AWS)  
-docs-task-1-ec2/         → EC2 setup evidence  
-docs-task-2-break-fix/   → Debugging logs  
-docs-task-3-s3-website/  → S3 deployment  
-docs-task-4-terraform/   → IaC setup  
-docs-task-5-docker/     → Docker setup  
-docs-task-6-cicd/       → CI/CD pipeline  
-.github/workflows/      → GitHub Actions  
+# 🔄 CI/CD Pipeline
+
+Automated deployment pipeline:
+
+GitHub → Build → Docker Image → Push → Deploy
+
+Key capabilities:
+- Automated build process
+- Container image creation
+- Deployment workflow automation
 
 ---
 
-## 🧠 What This Demonstrates
-- Real AWS cloud deployment (EC2 + S3)
-- Containerized application architecture
-- CI/CD automation pipeline
-- Infrastructure as Code concepts
-- Production-style repo organization
-
----
-
-## 🔥 Outcome
-This project simulates real DevOps engineering workflows used in production environments and demonstrates full-stack cloud deployment capability.
+# 📁 Repository Structure
 

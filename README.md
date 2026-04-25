@@ -72,6 +72,40 @@ This project demonstrates multiple cloud patterns:
 - Image build automation
 - Runtime deployment
 
+# 🏗 Architecture Diagram
+
+```mermaid
+flowchart LR
+
+User[User / Browser]
+
+EC2[EC2 Instance<br/>Apache / Docker App<br/>3.25.181.34]
+
+S3[S3 Static Website<br/>Resume Site]
+
+APIGW[API Gateway]
+
+Lambda[AWS Lambda<br/>Visitor Counter]
+
+DDB[DynamoDB]
+
+GH[GitHub Actions CI/CD]
+
+TF[Terraform IaC]
+
+User --> EC2
+User --> S3
+User --> APIGW
+
+APIGW --> Lambda --> DDB
+
+GH --> EC2
+GH --> Docker[Docker Build]
+
+TF --> EC2
+TF --> S3
+TF --> Lambda
+TF --> DDB
 ---
 
 # 🧰 Tech Stack

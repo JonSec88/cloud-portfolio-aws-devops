@@ -1,4 +1,4 @@
-k# 🚀 Cloud DevOps Engineering Portfolio (AWS Production Simulation)
+# 🚀 Cloud DevOps Engineering Portfolio (AWS Production Simulation)
 
 ## 👤 Jonathan Hinds
 Cloud / DevOps Engineer  

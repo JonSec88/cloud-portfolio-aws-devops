@@ -1,103 +1,136 @@
-````md id="single_block_final"
-# 🚀 Cloud DevOps Portfolio — AWS Multi-Architecture Engineering Project
+k# 🚀 Cloud DevOps Engineering Portfolio (AWS Production Simulation)
 
 ## 👤 Jonathan Hinds
-Cloud / DevOps Engineer Portfolio  
+Cloud / DevOps Engineer  
 GitHub: https://github.com/JonSec88
 
 ---
 
-# 🎯 EXECUTIVE SUMMARY
+# 🧭 EXECUTIVE SUMMARY
 
-Production AWS DevOps portfolio demonstrating:
+This repository demonstrates a complete AWS-based DevOps system simulating production engineering workflows across:
 
-EC2 Docker deployment  
-S3 static hosting  
-Terraform Infrastructure as Code  
-GitHub Actions CI/CD  
-Lambda + API Gateway + DynamoDB serverless stack  
-Real AWS debugging and networking fixes  
+- Infrastructure provisioning (Terraform)
+- CI/CD automation (GitHub Actions)
+- Containerised deployment (Docker on EC2)
+- Serverless backend (Lambda + API Gateway + DynamoDB)
+- Static website hosting (S3)
+- Real cloud debugging and network fixes
 
 ---
 
 # 🌐 LIVE SYSTEMS
 
-EC2: http://3.25.181.34  
-S3: http://jonsec88-s3-site-83927-579986815910-ap-southeast-2-an.s3-website-ap-southeast-2.amazonaws.com/
+### EC2 Application (Docker)
+http://3.25.181.34
 
----
-
-# 🏗 ARCHITECTURE
-
-```mermaid
-flowchart LR
-User[User]
-EC2[EC2 Docker App]
-S3[S3 Static Site]
-APIGW[API Gateway]
-Lambda[Lambda]
-DDB[DynamoDB]
-GH[GitHub Actions CI/CD]
-TF[Terraform IaC]
-
-User --> EC2
-User --> S3
-User --> APIGW
-APIGW --> Lambda --> DDB
-GH --> EC2
-TF --> EC2
-TF --> S3
-TF --> Lambda
-TF --> DDB
-````
+### S3 Static Resume Site
+http://jonsec88-s3-site-83927-579986815910-ap-southeast-2-an.s3-website-ap-southeast-2.amazonaws.com/
 
 ---
 
 # ⚙️ CI/CD PIPELINE
 
-GitHub push triggers:
-Docker build → EC2 deployment update
+Trigger: GitHub Push to main
+
+Flow:
+Code → GitHub Actions → Docker Build → EC2 Deployment
+
+Key capabilities:
+- Automated build pipeline
+- Container image creation
+- Remote EC2 update deployment
+
+---
+
+# 🧱 INFRASTRUCTURE AS CODE (TERRAFORM)
+
+Provisioned AWS resources:
+
+- EC2 instance (application host)
+- S3 bucket (static website hosting)
+- Lambda function (serverless compute)
+- API Gateway (routing layer)
+- DynamoDB (persistent storage)
+
+---
+
+# 📦 APPLICATION ARCHITECTURE
+
+System consists of:
+
+### EC2 Layer
+- Linux server (Amazon EC2)
+- Dockerised Flask application
+- Public web endpoint
+
+### Serverless Layer
+- API Gateway routing requests
+- Lambda processing logic
+- DynamoDB data persistence
+
+### Static Layer
+- S3-hosted resume website
+- Public static asset delivery
 
 ---
 
 # 📁 REPOSITORY STRUCTURE
 
-app/ → Flask Docker application
-terraform/ → AWS Infrastructure as Code
-resume-site/ → S3 static website
-docs-task-1-ec2/ → EC2 evidence
-docs-task-2-break-fix/ → Networking fixes
-docs-task-3-s3-website/ → S3 deployment
-docs-task-4-terraform/ → Terraform setup
-docs-task-5-docker/ → Docker deployment
-docs-task-6-cicd/ → CI/CD pipeline
-.github/workflows/ → GitHub Actions automation
+app/ → Flask Docker application  
+terraform/ → AWS infrastructure (IaC)  
+resume-site/ → S3 static website  
+docs-task-1-ec2/ → EC2 deployment evidence  
+docs-task-2-break-fix/ → Networking + debugging  
+docs-task-3-s3-website/ → S3 hosting evidence  
+docs-task-4-terraform/ → Infrastructure setup  
+docs-task-5-docker/ → Containerisation  
+docs-task-6-cicd/ → CI/CD pipeline  
 
 ---
 
-# 📸 EVIDENCE MAP
+# 📸 EVIDENCE (PROOF OF WORK)
 
-EC2 → docs-task-1-ec2/screenshots
-S3 → docs-task-3-s3-website/screenshots
-Terraform → docs-task-4-terraform/screenshots
-Docker → docs-task-5-docker/screenshots
-CI/CD → docs-task-6-cicd/screenshots
+Each module includes real deployment evidence:
+
+- EC2 provisioning + SSH access + runtime verification  
+- Security Group debugging and restoration  
+- S3 bucket configuration and public hosting  
+- Terraform apply outputs  
+- Docker build + container execution logs  
+- GitHub Actions pipeline runs  
+
+All evidence stored under `/docs-task-* /screenshots`
 
 ---
 
 # 🧰 TECH STACK
 
-AWS: EC2, S3, Lambda, API Gateway, DynamoDB
-DevOps: Docker, GitHub Actions, Terraform
-Languages: Python, Bash
-OS: Linux (Amazon EC2)
+AWS:
+EC2 • S3 • Lambda • API Gateway • DynamoDB
+
+DevOps:
+Terraform • Docker • GitHub Actions
+
+Languages:
+Python • Bash
+
+OS:
+Linux (Amazon EC2)
+
+---
+
+# 🧠 ENGINEERING HIGHLIGHTS
+
+✔ Multi-service AWS architecture design  
+✔ Infrastructure as Code implementation (Terraform)  
+✔ CI/CD automation pipeline (GitHub Actions)  
+✔ Containerised deployment (Docker + EC2)  
+✔ Serverless integration (Lambda + API Gateway)  
+✔ Real-world cloud debugging and fixes  
 
 ---
 
 # 🔥 OUTCOME
 
-End-to-end DevOps portfolio demonstrating real AWS infrastructure, automation, CI/CD, and production deployment workflows.
-
-```
-```
-
+This project demonstrates production-grade DevOps capability across AWS infrastructure, automation pipelines, and modern cloud deployment patterns.

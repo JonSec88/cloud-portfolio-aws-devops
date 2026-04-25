@@ -1,87 +1,76 @@
-# 🚀 Cloud Portfolio — AWS DevOps Engineering Project
+# 🚀 Cloud DevOps Portfolio — AWS Multi-Architecture Project
 
 ## 👤 Jonathan Hinds
-Cloud / DevOps Engineer Portfolio Project
+Cloud / DevOps Engineer Portfolio
+
+GitHub: https://github.com/JonSec88
 
 ---
 
-# 📌 Executive Summary
+# 📌 Project Overview
 
-End-to-end AWS cloud engineering project demonstrating real-world DevOps workflows including:
+This repository demonstrates a complete AWS-based DevOps engineering workflow including:
 
-- Infrastructure provisioning (EC2 + Terraform)
-- Serverless architecture (S3 + Lambda + API Gateway + DynamoDB)
-- Containerised deployment (Docker)
+- EC2 infrastructure deployment
+- Serverless architecture (S3 + Lambda)
+- Infrastructure as Code (Terraform)
+- Containerisation (Docker)
 - CI/CD automation (GitHub Actions)
-- Production-style repository structure with evidence-based documentation
+- Real-world debugging and networking fixes
+
+The goal is to demonstrate production-style cloud engineering practices across multiple AWS services.
 
 ---
 
-# 🌐 Live Systems
+# 🌐 Live Deployments
 
-## 🖥 EC2 Hosted Application (Docker/Apache Hybrid)
+## 🖥 EC2 Application (Linux + Web Server)
 http://3.25.181.34
+
+- Linux server setup
+- Web hosting via Apache
+- Public network configuration
 
 ---
 
 ## ☁️ Serverless Resume System (AWS S3)
 http://jonsec88-s3-site-83927-579986815910-ap-southeast-2-an.s3-website-ap-southeast-2.amazonaws.com/
 
----
-
-# 🧠 Architecture Overview
-
-This project demonstrates 2 production patterns:
-
-### 1. Traditional Infrastructure (EC2)
-- Linux server provisioning
-- Web hosting via Apache/Docker
-- Network configuration (Security Groups)
-
-### 2. Serverless Architecture (AWS)
-- S3 static hosting
-- Lambda backend API
-- API Gateway routing
-- DynamoDB persistence layer
+- Static website hosting
+- Serverless architecture
+- API integration via AWS services
 
 ---
 
 # ⚙️ CI/CD Pipeline
 
-GitHub Actions automates:
+Automated workflow using GitHub Actions:
 
-- Docker image build
-- Container deployment workflow
-- Code validation on push
-
-Workflow location:
-`.github/workflows/`
+- Code pushed to GitHub
+- Docker image build triggered
+- Deployment pipeline executed
 
 ---
 
-# 📁 Project Structure (Evidence-Based)
+# 🧠 System Architecture
 
-Each module contains screenshots proving implementation:
+This project demonstrates multiple cloud patterns:
 
-- `docs-task-1-ec2/` → EC2 provisioning & setup
-- `docs-task-2-break-fix/` → debugging & security fixes
-- `docs-task-3-s3-website/` → static hosting + S3 deployment
-- `docs-task-4-terraform/` → infrastructure as code
-- `docs-task-5-docker/` → containerisation workflow
-- `docs-task-6-cicd/` → CI/CD automation pipeline
+### 1. Traditional Infrastructure (EC2)
+- Linux server provisioning
+- Web server deployment
+- Network configuration (Security Groups)
 
----
+### 2. Serverless Architecture (AWS)
+- S3 static hosting
+- Lambda backend processing
+- API Gateway routing
+- DynamoDB persistence
 
-# 🧾 Evidence System
-
-Each task folder includes:
-
-✔ screenshots/  
-✔ terminal output  
-✔ AWS console proof  
-✔ deployment verification  
-
-This ensures every claim is verifiable.
+### 3. Containerised Deployment (Docker)
+- Flask application containerisation
+- Image build automation
+- Runtime deployment
 
 ---
 
@@ -89,16 +78,60 @@ This ensures every claim is verifiable.
 
 AWS EC2 • S3 • Lambda • API Gateway • DynamoDB  
 Docker • GitHub Actions • Terraform  
-Linux • Bash • Python (Flask)
+Python • Flask • Linux • Bash
+
+---
+
+# 📁 Repository Structure
+
+- `app/` → Flask Docker application
+- `terraform/` → Infrastructure as Code
+- `resume-site/` → Static S3 website
+- `docs-task-1-ec2/` → EC2 setup evidence
+- `docs-task-2-break-fix/` → Networking/debugging
+- `docs-task-3-s3-website/` → S3 deployment
+- `docs-task-4-terraform/` → Terraform infrastructure
+- `docs-task-5-docker/` → Docker containerisation
+- `docs-task-6-cicd/` → CI/CD pipeline
+- `.github/workflows/` → GitHub Actions automation
+
+---
+
+# 📸 Evidence Map
+
+## EC2 Deployment
+docs-task-1-ec2/screenshots/
+
+## Break/Fix Networking
+docs-task-2-break-fix/screenshots/
+
+## S3 Static Website
+docs-task-3-s3-website/screenshots/
+
+## Terraform Infrastructure
+docs-task-4-terraform/screenshots/
+
+## Docker Containerisation
+docs-task-5-docker/screenshots/
+
+## CI/CD Pipeline
+docs-task-6-cicd/screenshots/
+
+---
+
+# 🧠 Engineering Summary
+
+This project demonstrates:
+
+✔ Multi-service AWS architecture  
+✔ Infrastructure as Code (Terraform)  
+✔ Containerised application deployment  
+✔ CI/CD automation pipeline  
+✔ Cloud networking and debugging  
+✔ Production-style repository structure  
 
 ---
 
 # 🔥 Outcome
 
-This project demonstrates production-style cloud engineering across:
-
-- Infrastructure provisioning
-- Serverless architecture
-- Container deployment
-- CI/CD automation
-- Real-world AWS system design
+This portfolio demonstrates practical DevOps engineering capability across AWS services, automation pipelines, and infrastructure design patterns.

@@ -1,6 +1,3 @@
-Here is your **single clean terminal-ready output (no markdown wrapper, just paste into README.md)**:
-
-```
 # 🚀 Cloud DevOps Portfolio — AWS Multi-Architecture Project
 
 ## 👤 Jonathan Hinds
@@ -157,5 +154,3 @@ CI/CD → docs-task-6-cicd/screenshots
 # 🔥 Outcome
 
 Production-ready DevOps portfolio demonstrating real AWS infrastructure, automation, and deployment workflows.
-```
-

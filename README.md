@@ -1,4 +1,6 @@
-````md
+Here is your **single clean terminal-ready output (no markdown wrapper, just paste into README.md)**:
+
+```
 # 🚀 Cloud DevOps Portfolio — AWS Multi-Architecture Project
 
 ## 👤 Jonathan Hinds
@@ -29,44 +31,44 @@ This project simulates real-world cloud engineering workflows used in DevOps env
 ## 🖥 EC2 Application
 http://3.25.181.34
 
-- Linux server (Amazon EC2)
-- Docker-based deployment
-- Public HTTP access via Security Groups
+- Linux EC2 server
+- Docker container deployment
+- Public access via Security Groups
 
 ---
 
 ## ☁️ S3 Static Website
 http://jonsec88-s3-site-83927-579986815910-ap-southeast-2-an.s3-website-ap-southeast-2.amazonaws.com/
 
-- Static site hosted on Amazon S3
-- Serverless architecture
-- Highly available frontend
+- Static website hosted on S3
+- Serverless frontend deployment
+- Highly available architecture
 
 ---
 
 # ⚙️ CI/CD Pipeline (GitHub Actions)
 
-- Push to GitHub triggers pipeline
-- Docker image build automation
-- Deployment to EC2 instance
-- Continuous delivery workflow
+- Code pushed to GitHub triggers pipeline
+- Docker image built automatically
+- Deployment pushed to EC2
+- Fully automated delivery workflow
 
 ---
 
 # 🧠 System Architecture
 
 ## EC2 Layer
-- Docker container running Flask app
-- Linux-based server hosting
+- Dockerised Flask application
+- Linux server hosting
 
 ## S3 Layer
-- Static website hosting (resume site)
+- Static resume website hosting
 
 ## Serverless Layer
 - API Gateway → Lambda → DynamoDB
 
 ## CI/CD Layer
-- GitHub Actions automates build & deploy
+- GitHub Actions automation pipeline
 
 ## Infrastructure Layer
 - Terraform manages AWS resources
@@ -75,7 +77,6 @@ http://jonsec88-s3-site-83927-579986815910-ap-southeast-2-an.s3-website-ap-south
 
 # 🏗 Architecture Diagram
 
-```mermaid
 flowchart LR
 
 User[User / Browser]
@@ -107,7 +108,6 @@ TF --> EC2
 TF --> S3
 TF --> Lambda
 TF --> DDB
-````
 
 ---
 
@@ -121,43 +121,41 @@ Python • Flask • Linux • Bash
 
 # 📁 Repository Structure
 
-* app/ → Flask Docker application
-* terraform/ → Infrastructure as Code
-* resume-site/ → S3 static website
-* docs-task-1-ec2/ → EC2 evidence
-* docs-task-2-break-fix/ → Networking fixes
-* docs-task-3-s3-website/ → S3 deployment
-* docs-task-4-terraform/ → Terraform setup
-* docs-task-5-docker/ → Docker deployment
-* docs-task-6-cicd/ → CI/CD pipeline
+app/ → Flask Docker application
+terraform/ → Infrastructure as Code
+resume-site/ → S3 static website
+docs-task-1-ec2/ → EC2 evidence
+docs-task-2-break-fix/ → Networking fixes
+docs-task-3-s3-website/ → S3 deployment
+docs-task-4-terraform/ → Terraform infrastructure
+docs-task-5-docker/ → Docker deployment
+docs-task-6-cicd/ → CI/CD pipeline
 
 ---
 
 # 📸 Evidence Map
 
-* EC2 → docs-task-1-ec2/screenshots
-* S3 → docs-task-3-s3-website/screenshots
-* Terraform → docs-task-4-terraform/screenshots
-* Docker → docs-task-5-docker/screenshots
-* CI/CD → docs-task-6-cicd/screenshots
+EC2 → docs-task-1-ec2/screenshots  
+S3 → docs-task-3-s3-website/screenshots  
+Terraform → docs-task-4-terraform/screenshots  
+Docker → docs-task-5-docker/screenshots  
+CI/CD → docs-task-6-cicd/screenshots  
 
 ---
 
 # 🧠 Engineering Summary
 
-✔ Multi-service AWS architecture
-✔ Infrastructure as Code (Terraform)
-✔ Containerised deployment (Docker)
-✔ CI/CD automation (GitHub Actions)
-✔ Cloud networking + debugging
-✔ Production-style repository structure
+✔ Multi-service AWS architecture  
+✔ Infrastructure as Code (Terraform)  
+✔ Containerised deployment (Docker)  
+✔ CI/CD automation (GitHub Actions)  
+✔ Cloud networking and debugging  
+✔ Production-grade repo structure  
 
 ---
 
 # 🔥 Outcome
 
 Production-ready DevOps portfolio demonstrating real AWS infrastructure, automation, and deployment workflows.
-
-```
 ```
 

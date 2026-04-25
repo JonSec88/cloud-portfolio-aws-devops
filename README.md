@@ -1,77 +1,86 @@
-# AWS Cloud DevOps Portfolio with Docker CI CD and Serverless Architecture
+# 🚀 Cloud Portfolio DevOps Project (AWS + Docker + CI/CD)
 
-## Overview
-This project demonstrates a complete cloud DevOps workflow from development to production using Amazon Web Services and Docker. It includes continuous integration and deployment, infrastructure as code, container deployment, and a serverless application.
+## 📌 Overview
+This is a production-style DevOps cloud project demonstrating full deployment of a containerized web application on AWS using CI/CD automation.
 
-## Architecture
+The goal of this project is to show real-world skills in:
+- Cloud infrastructure (AWS EC2)
+- Containerization (Docker)
+- Infrastructure as Code (Terraform)
+- CI/CD automation (GitHub Actions)
+- Production-ready repository structure
 
-System 1 CI CD Deployment Pipeline  
-GitHub → GitHub Actions → Docker Build → Docker Hub → AWS EC2 → Live Application  
+---
 
-System 2 Serverless Resume Platform  
-User → S3 Static Website → API Gateway → Lambda → DynamoDB  
+## 🌐 Live Application
+http://3.25.181.34
 
-## Live Projects
+---
 
-Flask Application running on AWS EC2  
-http://3.25.181.34  
+## 📊 Project Status
+- ✅ EC2 instance deployed and running
+- ✅ Docker installed and configured on AWS
+- ✅ Application containerized successfully
+- ✅ GitHub Actions CI/CD pipeline implemented
+- ✅ Repository refactored into production structure
+- ✅ Resume site created and included
 
-Cloud Resume Website  
-http://YOUR-S3-WEBSITE-ENDPOINT  
+---
 
-## Tech Stack
+## ⚙️ CI/CD Pipeline
+On every push to `main` branch:
+1. GitHub Actions triggers workflow
+2. Docker image is built
+3. Image is pushed to Docker Hub
+4. Deployment can be pulled on EC2
 
-Amazon Web Services: EC2, S3, Lambda, API Gateway, DynamoDB  
-Docker  
-Terraform  
-GitHub Actions  
-Python Flask  
+---
 
-## Project Structure
+## 🧰 Tech Stack
+- AWS EC2 (Amazon Linux 2023)
+- Docker
+- GitHub Actions (CI/CD)
+- Terraform (Infrastructure as Code)
+- Nginx / Flask (application layer)
+- Bash / Linux administration
 
-cloud-portfolio-aws-devops/
+---
 
-app/  
-Flask application container  
+## 📁 Project Structure
 
-terraform/  
-Infrastructure as code for EC2  
+app/
+resume-site/
+terraform/
+docs-task-1-ec2/
+docs-task-2-break-fix/
+docs-task-3-s3-website/
+docs-task-4-terraform/
+docs-task-5-docker/
+docs-task-6-cicd/
+.github/workflows/
 
-.github/workflows/  
-CI CD pipeline automation  
+---
 
-resume-site/  
-Static website with API integration  
+## 📄 Resume / Portfolio Site
+Located in:
 
-screenshots/  
-Deployment proof and results  
+/resume-site/index.html
 
-README.md  
-Project documentation  
+Includes:
+- Personal portfolio page
+- GitHub project link
+- Live deployment link
 
-## Proof of Work
+---
 
-CI CD pipeline builds and pushes Docker image automatically  
-Container runs on AWS EC2 and is publicly accessible  
-Live application responds via public IP address  
-Serverless API updates visitor counter dynamically  
+## 🧠 What This Project Demonstrates
+- Real AWS cloud deployment
+- Docker container lifecycle management
+- CI/CD automation pipeline
+- Structured DevOps workflow
+- Clean production-grade repository organization
 
-## Key Features
+---
 
-Automated Docker build and push using GitHub Actions  
-Infrastructure provisioning using Terraform  
-Container deployment on AWS EC2  
-Serverless backend using Lambda and DynamoDB  
-Static website hosted using S3  
-
-## What This Demonstrates
-
-Ability to deploy complete cloud systems end to end  
-Understanding of DevOps workflows and automation  
-Experience with AWS cloud services and serverless design  
-Production style project structure and delivery  
-
-## Author
-
-Jon Hinds  
-Cloud DevOps Engineer
+## 🔥 Outcome
+This project simulates a real-world DevOps pipeline used in production environments and demonstrates end-to-end cloud engineering capability.

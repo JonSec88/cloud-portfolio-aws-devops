@@ -1,23 +1,20 @@
 # 🚀 Cloud DevOps Engineer Portfolio (AWS Production Simulation)
 
-## 👤 Jonathan Hinds
-
+## 👤 Jonathan Hinds  
 Cloud / DevOps Engineer  
 GitHub: https://github.com/JonSec88  
 
 ---
 
-## 🧭 Overview
+## 🧭 System Overview
 
-Production-style AWS DevOps environment demonstrating CI/CD automation, containerised deployment, infrastructure as code, and real-world cloud debugging.
-
-This project simulates a real-world cloud system deployed on AWS using modern DevOps practices.
+End-to-end AWS DevOps project demonstrating CI/CD automation, containerised deployment, infrastructure as code, and real cloud debugging.
 
 ---
 
 ## 🌐 Live Systems
 
-### EC2 Application (CI/CD Enabled)
+### EC2 Application (Docker + CI/CD)
 http://3.25.181.34  
 
 ### S3 Static Resume Site
@@ -25,55 +22,91 @@ http://jonsec88-s3-site-83927-579986815910-ap-southeast-2-an.s3-website-ap-south
 
 ---
 
-## 🧱 System Architecture
+## 🧱 Architecture
 
-- **Frontend:** Static resume site hosted on AWS S3  
-- **Backend:** Flask application running in Docker on AWS EC2  
-- **CI/CD:** GitHub Actions automated deployment pipeline  
-- **Infrastructure:** Terraform-managed AWS resources  
+docs/architecture.png
 
 ---
 
-## 🔧 Core Engineering Components
+## 🔧 EC2 Deployment (Docker + CI/CD)
 
-### EC2 + Docker Deployment
-Containerised Flask application deployed to EC2 with automated redeployment via CI/CD.
+![EC2 Live App](docs/screenshots/ec2/ec2-live-app.png)
 
----
+![CI/CD Success](docs/screenshots/ec2/cicd-success.png)
 
-### CI/CD Pipeline
-Automated workflow using GitHub Actions:
-- Triggered on Git push  
-- SSH into EC2  
-- Rebuild Docker container  
-- Redeploy application  
+![Docker Running](docs/screenshots/ec2/docker-running.png)
 
 ---
 
-### S3 Static Website
-Static HTML resume hosted using AWS S3 static website hosting.
+## 🚀 CI/CD Pipeline
+
+- GitHub Actions triggered on push  
+- SSH deployment to EC2  
+- Docker rebuild + restart automation  
 
 ---
 
-### Networking Debugging
-Security group misconfiguration identified and resolved in a real cloud incident simulation.
+## ☁️ S3 Static Website
+
+![Upload](docs/screenshots/s3/s3-upload.png)
+
+![Bucket Config](docs/screenshots/s3/s3-bucket-overview.png)
+
+![Hosting Enabled](docs/screenshots/s3/s3-hosting-enabled.png)
+
+![Live Site](docs/screenshots/s3/s3-live-site.png)
 
 ---
 
-### Infrastructure as Code (Terraform)
-AWS infrastructure defined and managed using Terraform for reproducibility.
+## 🌐 Networking & Debugging
+
+Real AWS security group incident resolved.
+
+![Broken Site](docs/screenshots/networking/broken-site.png)
+
+![SG No HTTP](docs/screenshots/networking/sg-no-http.png)
+
+![SG Restored](docs/screenshots/networking/sg-http-restored.png)
 
 ---
 
-## 🧠 Engineering Value
+## 🏗️ Infrastructure as Code (Terraform)
 
-- CI/CD automation  
-- Containerised workloads  
-- Infrastructure as Code  
-- Cloud networking debugging  
-- Multi-service AWS architecture  
+AWS infrastructure provisioned using Terraform.
 
 ---
 
 ## 📁 Repository Structure
 
+.github/ → CI/CD workflows  
+app/ → Flask Docker application  
+docs/ → Architecture + screenshots  
+resume-site/ → Static frontend  
+terraform/ → Infrastructure as Code  
+
+---
+
+## 🧰 Tech Stack
+
+AWS • Docker • Terraform • GitHub Actions  
+Python • HTML • Bash  
+Linux (EC2)
+
+---
+
+## 🧠 Engineering Value
+
+✔ CI/CD automation  
+✔ Containerised deployment  
+✔ Infrastructure as Code  
+✔ Real cloud debugging  
+✔ Multi-service AWS architecture  
+
+---
+
+## 🚀 Future Improvements
+
+- Load Balancer (ALB)  
+- HTTPS (SSL/TLS)  
+- Custom domain  
+- Auto scaling

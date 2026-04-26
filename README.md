@@ -45,8 +45,11 @@ Terraform → Infrastructure Provisioning
 
 GitHub Actions → CI/CD Automation
 
-📸 Diagram:
-docs/architecture.png
+---
+
+## 📸 System Diagram
+
+![Architecture Diagram](docs/architecture.png)
 
 ---
 
@@ -64,7 +67,7 @@ docs/architecture.png
 
 ---
 
-# ⚖️ Application Load Balancer (Production Layer)
+# ⚖️ Application Load Balancer (ALB)
 
 - Internet-facing AWS Application Load Balancer
 - Routes traffic to EC2 via Target Group

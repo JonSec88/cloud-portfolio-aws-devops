@@ -1,146 +1,130 @@
-# 🚀 Cloud DevOps Engineer Portfolio (AWS Production Simulation)
+# 🚀 AWS DevOps Portfolio — Production Simulation
 
 ## 👤 Jonathan Hinds
 DevOps / Cloud Engineer  
-GitHub: https://github.com/JonSec88
+GitHub: https://github.com/JonSec88  
 
 ---
 
-# 🧭 SUMMARY
+## 🧱 SYSTEM OVERVIEW
 
-End-to-end AWS DevOps portfolio demonstrating real-world cloud engineering across infrastructure provisioning, deployment automation, containerisation, and debugging workflows.
+Production-style AWS environment demonstrating:
 
-This system demonstrates hands-on engineering across:
-
-- EC2 deployment and Linux server configuration
-- Docker containerised application deployment
-- AWS S3 static website hosting
-- Terraform Infrastructure as Code
-- CI/CD automation via GitHub Actions (if included in repo workflow)
-- Real-world cloud troubleshooting and network fixes
+- Infrastructure as Code (Terraform)
+- Dockerised application deployment on EC2
+- Static website hosting on S3
+- Real-world cloud debugging (break/fix scenario)
 
 ---
 
-# 🌐 LIVE SYSTEMS
+## 🏗️ ARCHITECTURE
 
-### EC2 Application (Docker / Web Service)
+![Architecture](./docs/architecture.png)
+
+---
+
+## 🌐 LIVE SYSTEMS
+
+### EC2 Application
 http://3.25.181.34
 
-### S3 Static Website (Resume Site)
+### S3 Static Website
 http://jonsec88-s3-site-83927-579986815910-ap-southeast-2-an.s3-website-ap-southeast-2.amazonaws.com/
 
 ---
 
-# 🧱 SYSTEM BREAKDOWN (REAL IMPLEMENTATION)
+## ⚙️ INFRASTRUCTURE
 
-## 1. EC2 + Docker Application
-- Flask application containerised with Docker
-- Linux EC2 instance hosting runtime service
-- Public HTTP endpoint exposed via security groups
+### EC2 + Docker
+- Flask app containerised with Docker
+- Running on AWS EC2 Linux instance
+- HTTP access via security group
 
 Files:
-- app/app.py
-- app/Dockerfile
+- app/app.py  
+- app/Dockerfile  
 
 ---
 
-## 2. AWS S3 STATIC WEBSITE
-- Static HTML resume site
-- Public S3 bucket hosting
-- Website hosting configuration enabled
+### S3 Static Website
+- Resume site hosted on S3
+- Public bucket with website hosting enabled
 
 Files:
-- resume-site/index.html
-- docs-task-3-s3-website/
+- resume-site/index.html  
 
 ---
 
-## 3. NETWORKING + DEBUGGING (BREAK/FIX ENGINEERING)
-- Security group misconfiguration diagnosis
-- HTTP access restoration
-- Real cloud incident debugging workflow
+### Terraform (IaC)
+- EC2 provisioned via Terraform
+- Security groups defined in code
+
+Files:
+- terraform/main.tf  
+
+---
+
+### Break/Fix Incident
+
+**Problem**
+- Site not accessible over HTTP  
+
+**Root Cause**
+- Missing port 80 inbound rule  
+
+**Fix**
+- Added HTTP rule (0.0.0.0/0)  
+
+**Result**
+- Site restored  
 
 Evidence:
 - docs-task-2-break-fix/screenshots/
-  - sg-no-http.png
-  - sg-http-restored.png
-  - broken-site.png
-  - site-working.png
 
 ---
 
-## 4. INFRASTRUCTURE AS CODE (TERRAFORM)
-- AWS infrastructure defined as reproducible code
-- EC2 provisioning via main.tf
-- State-based infrastructure management
+## 📁 STRUCTURE
 
-Files:
-- terraform/main.tf
-
----
-
-# 📁 REPOSITORY STRUCTURE
-
-app/ → Flask Docker application  
-docs-task-2-break-fix/ → Networking + incident resolution  
-docs-task-3-s3-website/ → Static S3 deployment  
-resume-site/ → Frontend HTML site  
-terraform/ → Infrastructure as Code  
-.gitignore → Repo hygiene  
+app/  
+resume-site/  
+terraform/  
+docs/  
+docs-task-2-break-fix/  
 
 ---
 
-# 📸 ENGINEERING EVIDENCE (REAL PROOF)
+## 🧰 TECH STACK
 
-## EC2 Deployment
-- Application running on EC2 instance
-- Docker container execution verified
-
-## Break/Fix Engineering
-- Security group misconfiguration resolved
-- HTTP access restored successfully
-- Live site recovery demonstrated
-
-## S3 Hosting
-- Bucket configuration completed
-- Static site deployment verified
-- Public access confirmed
-
-## Terraform
-- Infrastructure defined via code (main.tf)
-- Reproducible AWS provisioning approach
+AWS: EC2, S3  
+DevOps: Docker, Terraform  
+Languages: Python, HTML  
+OS: Linux  
 
 ---
 
-# 🧰 TECH STACK
+## 🚀 DEPLOYMENT
 
-### AWS
-EC2 • S3
+### Terraform
+terraform init  
+terraform apply  
 
-### DevOps Tools
-Terraform • Docker
-
-### Languages
-Python • HTML • Bash
-
-### OS
-Linux (Amazon EC2)
+### Docker
+docker build -t app .  
+docker run -p 80:80 app  
 
 ---
 
-# 🧠 ENGINEERING VALUE
+## 💰 COST
 
-This project demonstrates:
-
-✔ Real AWS infrastructure deployment  
-✔ Containerised application hosting  
-✔ Cloud networking debugging (real failure + fix cycle)  
-✔ Infrastructure as Code implementation  
-✔ Static + dynamic workload deployment  
-✔ Production-style repository structure  
+~$5–15/month (EC2 + S3)
 
 ---
 
-# 🔥 OUTCOME
+## 🔥 OUTCOME
 
-This repository demonstrates practical DevOps engineering capability across AWS infrastructure, containerisation, infrastructure automation, and real-world cloud troubleshooting workflows.
+Real-world DevOps project demonstrating:
+
+- Cloud infrastructure deployment  
+- Containerisation  
+- Infrastructure as Code  
+- Incident debugging  

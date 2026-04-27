@@ -566,47 +566,31 @@
     </div>
   </section>
 
-<section>
-    <div class="sec-label">Visitor counter</div>
-
-    <div class="counter-block">
-        <div class="counter-num" id="count">—</div>
-
-        <div class="counter-right">
-            <div class="counter-label">Total unique visits</div>
-            <div class="counter-sub">
-                Powered by API Gateway → Lambda → DynamoDB
-            </div>
-
-            <div class="counter-status" id="status">
-                <div class="counter-status-dot"></div>
-                Connecting...
-            </div>
-        </div>
-    </div>
-</section>
-
 <script>
-async function loadCounter() {
-    const countEl = document.getElementById("count");
-    const statusEl = document.getElementById("status");
+const API_URL = "https://qi14a8ccx2.execute-api.ap-southeast-2.amazonaws.com/prod/count";
 
-    try {
-        const res = await fetch("https://qi14a8ccx2.execute-api.ap-southeast-2.amazonaws.com/prod/count");
-        const data = await res.json();
+async function updateCounter() {
+  const countEl = document.getElementById("count");
+  const statusEl = document.getElementById("status");
 
-        countEl.innerText = data.count ?? 0;
+  try {
+    const res = await fetch(API_URL, { cache: "no-store" });
+    const data = await res.json();
 
-        statusEl.innerHTML = '<div class="counter-status-dot"></div> Live';
-    } catch (e) {
-        countEl.innerText = "—";
-        statusEl.innerHTML = '<div class="counter-status-dot"></div> Offline';
-    }
+    const count = data.count ?? (data.body ? JSON.parse(data.body).count : null);
+
+    countEl.innerText = count ?? "—";
+    statusEl.innerHTML = '<div class="counter-status-dot"></div> Live';
+
+  } catch (e) {
+    countEl.innerText = "—";
+    statusEl.innerHTML = '<div class="counter-status-dot" style="background:red"></div> Offline';
+  }
 }
 
-loadCounter();
+updateCounter();
+setInterval(updateCounter, 15000);
 </script>
-
   <footer class="footer">
     <div class="footer-left">Jonathan Hinds · Bangkok, Thailand · Open to remote offers</div>
     <div class="footer-links">

@@ -33,6 +33,8 @@ http://alb.jonsec.cloud/
 ## S3 Static Resume Site
 https://www.jonsec.cloud/
 
+## API Site Visit Counter
+https://api.jonsec.cloud/
 ---
 
 # 🧱 Architecture

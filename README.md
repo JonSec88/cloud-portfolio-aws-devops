@@ -25,7 +25,7 @@ The goal is to demonstrate **job-ready cloud engineering capability** through re
 # 🌐 Live Systems
 
 ## EC2 Application
-[http://ec2.jonsec.cloud/](https://api.jonsec.cloud/)
+[http://ec2.jonsec.cloud/]
 
 ## Application Load Balancer (Production Routing)
 [http://devops-alb-1860853383.ap-southeast-2.elb.amazonaws.com](http://alb.jonsec.cloud/)

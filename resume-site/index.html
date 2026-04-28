@@ -11,79 +11,49 @@
 
 <style>
   :root {
-    --bg: #080c12;
-    --surface: #0d1420;
-    --border: #1a2438;
-    --accent: #00d4ff;
-    --accent2: #ff6b35;
-    --muted: #4a6080;
-    --text: #c8d8e8;
-    --bright: #f0f6ff;
+    --bg:#080c12;
+    --surface:#0d1420;
+    --border:#1a2438;
+    --accent:#00d4ff;
+    --muted:#4a6080;
+    --text:#c8d8e8;
+    --bright:#f0f6ff;
   }
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Syne', sans-serif;
-    overflow-x: hidden;
-    min-height: 100vh;
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Syne',sans-serif;
   }
 
-  body::before, body::after {
-    content: '';
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
+  .wrap{position:relative;}
+
+  .footer{
+    margin-top:80px;
+    padding-top:32px;
+    border-top:1px solid var(--border);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:12px;
   }
 
-  body::after {
-    background-image:
-      linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
+  .footer-left{
+    font-family:'Space Mono',monospace;
+    font-size:11px;
+    color:var(--muted);
   }
 
-  .wrap { position: relative; }
-
-  section { margin-top: 60px; }
-
-  .footer {
-    margin-top: 80px;
-    padding-top: 32px;
-    border-top: 1px solid var(--border);
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 12px;
+  .footer-links a{
+    font-family:'Space Mono',monospace;
+    font-size:11px;
+    color:var(--muted);
+    text-decoration:none;
   }
 
-  .footer-left {
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    color: var(--muted);
-  }
-
-  .footer-links a {
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    color: var(--muted);
-    text-decoration: none;
-  }
-
-  .footer-links a:hover { color: var(--accent); }
-
-  .counter-status-dot {
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: #22c55e;
-    display: inline-block;
-    margin-right: 6px;
-  }
+  .footer-links a:hover{color:var(--accent);}
 </style>
 </head>
 
@@ -91,72 +61,42 @@
 
 <div class="wrap">
 
-  <!-- ALL YOUR EXISTING CONTENT ABOVE REMAINS UNCHANGED -->
+<!-- ================= COUNTER (FIXED POSITION ABOVE FOOTER) ================= -->
 
-  <!-- ===================================================== -->
-  <!-- ✅ FIXED COUNTER (ONLY ONE VERSION, ABOVE FOOTER) -->
-  <!-- ===================================================== -->
+<div id="visitor-counter-wrapper" style="text-align:center;margin:40px 0;">
+  <div style="font-size:14px;opacity:0.7;">Visitor Counter</div>
 
-  <div id="visitor-counter-wrapper" style="text-align:center; margin:40px 0;">
-    <div style="font-size:14px; opacity:0.7;">Visitor Counter</div>
+  <div id="count" style="font-size:32px;font-weight:bold;">—</div>
 
-    <div id="count" style="font-size:32px; font-weight:bold;">—</div>
+  <div id="status" style="font-size:12px;opacity:0.6;">
+    Loading
+  </div>
+</div>
 
-    <div id="status" style="font-size:12px; opacity:0.6;">
-      <div class="counter-status-dot"></div> Loading
-    </div>
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+  <div class="footer-left">
+    Jonathan Hinds · Bangkok, Thailand · Open to remote offers
   </div>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-left">
-      Jonathan Hinds · Bangkok, Thailand · Open to remote offers
-    </div>
-
-    <div class="footer-links">
-      <a href="https://github.com/JonSec88/cloud-portfolio-aws-devops" target="_blank">
-        GitHub
-      </a>
-    </div>
-  </footer>
+  <div class="footer-links">
+    <a href="https://github.com/JonSec88/cloud-portfolio-aws-devops" target="_blank">
+      GitHub
+    </a>
+  </div>
+</footer>
 
 </div>
 
-<!-- ===================================================== -->
-<!-- ✅ SINGLE CLEAN COUNTER SCRIPT (FIXED API ONLY) -->
-<!-- ===================================================== -->
+<!-- ================= FINAL WORKING COUNTER SCRIPT ================= -->
 
 <script>
-const API_URL = "https://api.jonsec.cloud";
+document.addEventListener("DOMContentLoaded", async () => {
 
-async function updateCounter() {
+  const API = "https://api.jonsec.cloud";
+
   const countEl = document.getElementById("count");
   const statusEl = document.getElementById("status");
 
-  if (!countEl || !statusEl) return;
-
-  try {
-    const res = await fetch(API_URL, { cache: "no-store" });
-    const data = await res.json();
-
-    const visits = data.visits;
-
-    countEl.innerText = visits ?? "—";
-
-    statusEl.innerHTML =
-      '<div class="counter-status-dot"></div> Live · updates every 15s';
-
-  } catch (err) {
-    countEl.innerText = "—";
-
-    statusEl.innerHTML =
-      '<div class="counter-status-dot" style="background:#ef4444"></div> Offline';
-  }
-}
-
-updateCounter();
-setInterval(updateCounter, 15000);
-</script>
-
-</body>
-</html>
+  if (!count

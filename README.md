@@ -24,14 +24,14 @@ The goal is to demonstrate **job-ready cloud engineering capability** through re
 
 # 🌐 Live Systems
 
-## EC2 Application (Direct)
-http://3.25.181.34
+## EC2 Application
+[http://ec2.jonsec.cloud/](https://api.jonsec.cloud/)
 
 ## Application Load Balancer (Production Routing)
-http://devops-alb-1860853383.ap-southeast-2.elb.amazonaws.com
+[http://devops-alb-1860853383.ap-southeast-2.elb.amazonaws.com](http://alb.jonsec.cloud/)
 
 ## S3 Static Resume Site
-http://jonsec88-s3-site-83927-579986815910-ap-southeast-2-an.s3-website-ap-southeast-2.amazonaws.com/
+[http://jonsec88-s3-site-83927-579986815910-ap-southeast-2-an.s3-website-ap-southeast-2.amazonaws.com/](https://www.jonsec.cloud/)
 
 ---
 

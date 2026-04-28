@@ -1,168 +1,237 @@
-# 🚀 AWS Cloud DevOps Portfolio (Production Simulation)
+# 🚀 AWS Cloud DevOps Portfolio (Production Architecture)
 
 ## 👤 Jonathan Hinds
+
 Cloud / DevOps Engineer
 
-GitHub: https://github.com/JonSec88
+---
+
+# 🧭 Overview
+
+Production-style AWS environment demonstrating full-stack cloud engineering across:
+
+* Static frontend hosting (S3)
+* Server-side compute (EC2 + Docker)
+* Load balancing (ALB)
+* Serverless architecture (API Gateway + Lambda + DynamoDB)
+* Infrastructure as Code (Terraform)
+* CI/CD automation (GitHub Actions)
+* Real-world networking + DNS + certificate debugging
 
 ---
 
-# 🧭 System Overview
+# 🌐 Live Production Systems
 
-This project demonstrates a complete AWS DevOps production-style environment including:
+## 🟢 Primary Portfolio Site (S3)
 
-- EC2 Linux server deployment with Docker
-- Application Load Balancer (ALB) routing layer
-- S3 static website hosting
-- Terraform Infrastructure as Code (IaC)
-- CI/CD automation using GitHub Actions
-- Real-world AWS networking troubleshooting
+[https://www.jonsec.cloud/](https://www.jonsec.cloud/)
 
-The goal is to demonstrate **job-ready cloud engineering capability** through real deployment and debugging scenarios.
+Static resume website hosted on AWS S3.
+Primary entry point for all visitors.
 
 ---
 
-# 🌐 Live Systems
+## ⚡ Visitor Counter API (Serverless)
 
-## EC2 Application
-http://ec2.jonsec.cloud/
+[https://api.jonsec.cloud/](https://api.jonsec.cloud/)
 
-## Application Load Balancer (Production Routing)
-http://alb.jonsec.cloud/
+Architecture:
 
-## S3 Static Resume Site
-https://www.jonsec.cloud/
+```text id="a1"
+API Gateway → Lambda → DynamoDB
+```
 
-## API Site Visit Counter
-https://api.jonsec.cloud/
----
+Example response:
 
-# 🧱 Architecture
-
-User → ALB → Target Group → EC2 (Docker Flask App)
-
-S3 → Static Resume Website
-
-Terraform → Infrastructure Provisioning
-
-GitHub Actions → CI/CD Automation
+```json id="a2"
+{"visits": 34}
+```
 
 ---
 
-## 📸 System Diagram
+## 🖥️ EC2 Application (Docker Hosted)
+
+[http://ec2.jonsec.cloud/](http://ec2.jonsec.cloud/)
+
+* Flask application
+* Docker container deployment
+* Linux EC2 instance
+
+---
+
+## ⚖️ Application Load Balancer
+
+[http://alb.jonsec.cloud/](http://alb.jonsec.cloud/)
+
+* Routes traffic to EC2 target group
+* Health-checked backend system
+
+---
+
+# 🧱 Full Architecture
+
+```text id="a3"
+User
+ ├── S3 Static Site (www.jonsec.cloud)
+ ├── API Gateway → Lambda → DynamoDB (api.jonsec.cloud)
+ └── ALB → EC2 Docker App (ec2.jonsec.cloud)
+```
+
+---
+
+# 📸 Architecture Diagram
 
 ![Architecture Diagram](docs/architecture.png)
 
 ---
 
-# 🔧 EC2 Deployment (Docker + CI/CD)
+# ☁️ S3 Static Hosting (Frontend Layer)
 
-- Flask application containerised using Docker
-- Hosted on AWS EC2 Linux instance
-- Exposed on port 80
-- Automatically deployed via GitHub Actions pipeline
+* Static resume website hosted on AWS S3
+* Public bucket access configured
+* Global entry point for portfolio
 
 ### Evidence:
-- docs/screenshots/ec2/ec2-live-app.png
-- docs/screenshots/ec2/docker-running.png
-- docs/screenshots/ec2/cicd-success.png
+
+* docs/screenshots/s3/s3-upload.png
+* docs/screenshots/s3/s3-hosting-enabled.png
+* docs/screenshots/s3/s3-live-site.png
+* docs/screenshots/s3/s3-bucket-overview.png
+
+---
+
+# ⚡ Serverless API (Visitor Counter System)
+
+* API Gateway (HTTP API)
+* AWS Lambda (Python runtime)
+* DynamoDB (persistent counter storage)
+* Custom domain + SSL via ACM
+
+### Features:
+
+* Stateless request handling
+* Persistent visit tracking
+* JSON response API
+
+### Evidence:
+
+* docs/screenshots/api/api-gateway.png
+* docs/screenshots/api/lambda.png
+* docs/screenshots/api/dynamodb.png
+
+---
+
+# 🖥️ EC2 Deployment (Docker + CI/CD)
+
+* Flask application containerised using Docker
+* Hosted on AWS EC2 Linux instance
+* Exposed via port 80
+* Automated deployment via GitHub Actions
+
+### Evidence:
+
+* docs/screenshots/ec2/ec2-live-app.png
+* docs/screenshots/ec2/docker-running.png
+* docs/screenshots/ec2/cicd-success.png
 
 ---
 
 # ⚖️ Application Load Balancer (ALB)
 
-- Internet-facing AWS Application Load Balancer
-- Routes traffic to EC2 via Target Group
-- Health checks ensure backend availability
+* Internet-facing AWS ALB
+* Routes traffic to EC2 target group
+* Health check monitoring enabled
 
 ### Evidence:
-- docs/screenshots/alb/alb-live.png
-- docs/screenshots/alb/target-healthy.png
-- docs/screenshots/alb/listener.png
+
+* docs/screenshots/alb/alb-live.png
+* docs/screenshots/alb/target-healthy.png
+* docs/screenshots/alb/listener.png
 
 ---
 
-# ☁️ S3 Static Website Hosting
+# 🌐 Networking & Real Debugging
 
-- Static resume website hosted on AWS S3
-- Public access enabled
-- Fully configured static hosting
+Real AWS production issues resolved:
 
-### Evidence:
-- docs/screenshots/s3/s3-upload.png
-- docs/screenshots/s3/s3-hosting-enabled.png
-- docs/screenshots/s3/s3-live-site.png
-- docs/screenshots/s3/s3-bucket-overview.png
-
----
-
-# 🌐 Networking & Debugging (Real Incident)
-
-Real AWS troubleshooting performed:
-
-- Security group misconfiguration identified
-- HTTP access restored successfully
-- Application connectivity recovered
+* DNS NXDOMAIN resolution
+* ACM certificate validation issues
+* API Gateway stage deployment issues
+* HTTP API routing mismatch
+* Custom domain mapping failures
+* Security group access fixes
 
 ### Evidence:
-- docs/screenshots/networking/broken-site.png
-- docs/screenshots/networking/sg-no-http.png
-- docs/screenshots/networking/sg-http-restored.png
+
+* docs/screenshots/networking/dns-issue.png
+* docs/screenshots/networking/sg-fix.png
+* docs/screenshots/networking/alb-fix.png
 
 ---
 
 # 🏗️ Infrastructure as Code (Terraform)
 
-- AWS infrastructure provisioned using Terraform
-- Reproducible infrastructure setup
-- Version-controlled cloud resources
+* Fully reproducible AWS infrastructure
+* Version-controlled cloud provisioning
+* Multi-service architecture support
 
 ---
 
-# ⚙️ CI/CD Pipeline
+# ⚙️ CI/CD Pipeline (GitHub Actions)
 
-- GitHub Actions triggered on push
-- Docker image build and deployment
-- Automated EC2 deployment via SSH
-- Zero manual deployment process
+* Automated Docker build
+* EC2 deployment via SSH
+* Push-based continuous deployment
+* Zero manual deployment steps
 
 ---
 
 # 🧰 Tech Stack
 
-AWS • Docker • Terraform • GitHub Actions  
-Python • HTML • Bash  
-Linux (EC2)
+AWS (S3, EC2, ALB, API Gateway, Lambda, DynamoDB, Route53, ACM)
+Docker • Terraform • GitHub Actions
+Python • Flask • JavaScript • HTML • Bash
+Linux (Amazon EC2)
 
 ---
 
 # 🧠 Engineering Highlights
 
-✔ Production-style AWS architecture  
-✔ Real cloud debugging (networking + security groups)  
-✔ Containerised deployment system  
-✔ Infrastructure as Code (Terraform)  
-✔ Fully automated CI/CD pipeline  
-✔ Multi-service AWS system design  
+✔ Multi-layer AWS architecture (frontend + backend + serverless)
+✔ Real production DNS + SSL configuration
+✔ Containerised compute environment
+✔ Serverless API with persistent storage
+✔ Infrastructure as Code (Terraform)
+✔ Fully automated CI/CD pipeline
+✔ Real-world AWS debugging (networking, DNS, certificates, routing)
+✔ Custom domain production deployment
 
 ---
 
 # 🚀 Outcome
 
-This project demonstrates practical DevOps engineering capability across:
+This project demonstrates real-world cloud engineering capability across:
 
-- Cloud infrastructure design
-- Deployment automation
-- Container orchestration
-- Networking troubleshooting
-- Production AWS architecture patterns
+* Cloud architecture design
+* Serverless systems
+* Containerised deployments
+* Networking and DNS engineering
+* Production debugging and recovery
+* Automation and CI/CD pipelines
 
 ---
 
 # 🚀 Future Improvements
 
-- HTTPS (SSL via ACM)
-- Custom domain setup
-- Auto Scaling Group
-- CloudFront CDN
-- Monitoring via CloudWatch
+* CloudFront CDN for S3 site
+* Auto Scaling Groups for EC2
+* WAF security layer
+* Observability (CloudWatch dashboards)
+* Blue/Green deployment strategy
+* Cost optimisation improvements
+
+---
+
+# 🔗 Repository
+
+GitHub: [https://github.com/JonSec88](https://github.com/JonSec88)

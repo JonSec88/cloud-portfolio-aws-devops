@@ -573,18 +573,26 @@ async function updateCounter() {
   const countEl = document.getElementById("count");
   const statusEl = document.getElementById("status");
 
+  if (!countEl || !statusEl) return;
+
   try {
     const res = await fetch(API_URL, { cache: "no-store" });
     const data = await res.json();
 
-    const count = data.visits;
+    const visits = data.visits;
 
-    countEl.innerText = count ?? "—";
-    statusEl.innerHTML = '<div class="counter-status-dot"></div> Live';
+    countEl.innerText = visits ?? "—";
+
+    statusEl.innerHTML =
+      '<div class="counter-status-dot"></div> Live';
 
   } catch (e) {
+    console.log("Counter error:", e);
+
     countEl.innerText = "—";
-    statusEl.innerHTML = '<div class="counter-status-dot" style="background:red"></div> Offline';
+
+    statusEl.innerHTML =
+      '<div class="counter-status-dot" style="background:red"></div> Offline';
   }
 }
 
@@ -592,6 +600,13 @@ updateCounter();
 setInterval(updateCounter, 15000);
 </script>
 
+<div id="visitor-counter-wrapper" style="text-align:center; margin:40px 0;">
+  <div style="font-size:14px; opacity:0.7;">Visitor Counter</div>
+  <div id="count" style="font-size:32px; font-weight:bold;">—</div>
+  <div id="status" style="font-size:12px; opacity:0.6;">
+    <div class="counter-status-dot"></div> Loading
+  </div>
+</div>
 
   <footer class="footer">
     <div class="footer-left">Jonathan Hinds · Bangkok, Thailand · Open to remote offers</div>

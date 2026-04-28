@@ -567,7 +567,7 @@
   </section>
 
 <script>
-const API_URL = "https://qi14a8ccx2.execute-api.ap-southeast-2.amazonaws.com/prod/count";
+const API_URL = "https://api.jonsec.cloud";
 
 async function updateCounter() {
   const countEl = document.getElementById("count");
@@ -577,7 +577,7 @@ async function updateCounter() {
     const res = await fetch(API_URL, { cache: "no-store" });
     const data = await res.json();
 
-    const count = data.count ?? (data.body ? JSON.parse(data.body).count : null);
+    const count = data.visits;
 
     countEl.innerText = count ?? "—";
     statusEl.innerHTML = '<div class="counter-status-dot"></div> Live';

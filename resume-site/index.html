@@ -4,99 +4,638 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jonathan Hinds | Cloud & DevOps Engineer</title>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
   :root {
-    --bg:#080c12;
-    --surface:#0d1420;
-    --border:#1a2438;
-    --accent:#00d4ff;
-    --muted:#4a6080;
-    --text:#c8d8e8;
-    --bright:#f0f6ff;
+    --bg:      #080c12;
+    --surface: #0d1420;
+    --border:  #1a2438;
+    --accent:  #00d4ff;
+    --green:   #22c55e;
+    --purple:  #a78bfa;
+    --muted:   #4a6080;
+    --text:    #c8d8e8;
+    --bright:  #f0f6ff;
   }
 
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
 
-  body{
-    background:var(--bg);
-    color:var(--text);
-    font-family:'Syne',sans-serif;
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Syne', sans-serif;
+    overflow-x: hidden;
+    min-height: 100vh;
   }
 
-  .wrap{position:relative;}
-
-  .footer{
-    margin-top:80px;
-    padding-top:32px;
-    border-top:1px solid var(--border);
-    display:flex;
-    justify-content:space-between;
-    flex-wrap:wrap;
-    gap:12px;
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,212,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,212,255,0.025) 1px, transparent 1px);
+    background-size: 64px 64px;
+    pointer-events: none;
+    z-index: 0;
   }
 
-  .footer-left{
-    font-family:'Space Mono',monospace;
-    font-size:11px;
-    color:var(--muted);
+  .wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 24px 100px;
   }
 
-  .footer-links a{
-    font-family:'Space Mono',monospace;
-    font-size:11px;
-    color:var(--muted);
-    text-decoration:none;
+  /* HERO */
+  .hero {
+    padding: 72px 0 56px;
+    border-bottom: 1px solid var(--border);
+    animation: fadeUp 0.7s ease both;
   }
 
-  .footer-links a:hover{color:var(--accent);}
+  .hero-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    width: 24px; height: 1px;
+    background: var(--accent);
+  }
+
+  .live-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 6px var(--green);
+    animation: blink 1.8s ease-in-out infinite;
+    display: inline-block;
+  }
+
+  h1 {
+    font-size: clamp(48px, 8vw, 88px);
+    font-weight: 800;
+    line-height: 0.92;
+    color: var(--bright);
+    letter-spacing: -0.03em;
+    margin-bottom: 28px;
+  }
+
+  h1 em { font-style: normal; color: var(--accent); }
+
+  .hero-sub {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text);
+    max-width: 580px;
+    margin-bottom: 32px;
+  }
+
+  .hero-sub strong { color: var(--bright); }
+
+  .hero-chips { display: flex; flex-wrap: wrap; gap: 10px; }
+
+  .chip {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    padding: 5px 12px;
+    border-radius: 3px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+  }
+
+  .chip.hi {
+    border-color: rgba(0,212,255,0.35);
+    color: var(--accent);
+    background: rgba(0,212,255,0.04);
+  }
+
+  /* SECTION */
+  .sec {
+    margin-top: 64px;
+    animation: fadeUp 0.7s ease both;
+  }
+
+  .sec:nth-child(2) { animation-delay: 0.08s; }
+  .sec:nth-child(3) { animation-delay: 0.16s; }
+  .sec:nth-child(4) { animation-delay: 0.24s; }
+  .sec:nth-child(5) { animation-delay: 0.32s; }
+  .sec:nth-child(6) { animation-delay: 0.40s; }
+
+  .sec-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .sec-label::after {
+    content: '';
+    flex: 1; height: 1px;
+    background: var(--border);
+  }
+
+  /* ABOUT CARDS */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .acard {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 26px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.25s, transform 0.25s;
+  }
+
+  .acard:hover {
+    border-color: rgba(0,212,255,0.28);
+    transform: translateY(-2px);
+  }
+
+  .acard::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 2px; height: 100%;
+    background: linear-gradient(to bottom, var(--accent), transparent);
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
+
+  .acard:hover::after { opacity: 1; }
+  .acard.span2 { grid-column: 1 / -1; }
+
+  .acard-icon { font-size: 20px; margin-bottom: 12px; }
+
+  .acard-title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--bright);
+    margin-bottom: 10px;
+  }
+
+  .acard-body { font-size: 15px; line-height: 1.75; color: var(--text); }
+  .acard-body strong { color: var(--accent); }
+
+  /* STACK */
+  .stack-group { margin-bottom: 18px; }
+
+  .stack-group-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+
+  .tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    padding: 5px 13px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    color: var(--text);
+    cursor: default;
+    transition: all 0.2s;
+  }
+
+  .tag:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(0,212,255,0.04);
+  }
+
+  .tag.live { border-color: rgba(0,212,255,0.38); color: var(--accent); }
+
+  /* SYSTEMS */
+  .systems { display: flex; flex-direction: column; gap: 10px; }
+
+  .sys {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 20px;
+    text-decoration: none;
+    transition: border-color 0.25s, background 0.25s;
+  }
+
+  .sys:hover {
+    border-color: rgba(0,212,255,0.35);
+    background: rgba(0,212,255,0.03);
+  }
+
+  .sys-l { display: flex; align-items: center; gap: 14px; }
+
+  .sys-indicator {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    animation: blink 2s ease-in-out infinite;
+  }
+
+  .sys-indicator.green  { background: var(--green);  box-shadow: 0 0 8px var(--green); }
+  .sys-indicator.purple { background: var(--purple); box-shadow: 0 0 8px var(--purple); animation: none; }
+
+  .sys-name { font-size: 14px; font-weight: 600; color: var(--bright); }
+
+  .sys-meta {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  .sys-arr {
+    color: var(--muted);
+    font-size: 16px;
+    transition: color 0.2s, transform 0.2s;
+  }
+
+  .sys:hover .sys-arr { color: var(--accent); transform: translateX(4px); }
+
+  /* COUNTER */
+  .counter-wrap {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 36px 40px;
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    flex-wrap: wrap;
+  }
+
+  #count {
+    font-family: 'Space Mono', monospace;
+    font-size: 68px;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+    text-shadow: 0 0 36px rgba(0,212,255,0.28);
+    min-width: 110px;
+  }
+
+  .counter-r { flex: 1; min-width: 180px; }
+
+  .counter-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--bright);
+    margin-bottom: 4px;
+  }
+
+  .counter-arch {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+
+  #status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    padding: 4px 10px;
+    border-radius: 3px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+  }
+
+  #status.ok  { color: var(--green); background: rgba(34,197,94,0.08); border-color: rgba(34,197,94,0.2); }
+  #status.err { color: #ef4444;      background: rgba(239,68,68,0.08);  border-color: rgba(239,68,68,0.2); }
+
+  .status-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    animation: blink 1.5s ease-in-out infinite;
+  }
+
+  /* FOOTER */
+  footer {
+    margin-top: 80px;
+    padding-top: 28px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer-l {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+
+  .footer-links { display: flex; gap: 20px; }
+
+  .footer-links a {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--accent); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.3; }
+  }
+
+  @media (max-width: 600px) {
+    .about-grid { grid-template-columns: 1fr; }
+    .acard.span2 { grid-column: 1; }
+    h1 { font-size: 52px; }
+    .counter-wrap { flex-direction: column; gap: 20px; }
+    #count { font-size: 52px; }
+  }
 </style>
 </head>
-
 <body>
-
 <div class="wrap">
 
-<!-- ================= COUNTER (FIXED POSITION ABOVE FOOTER) ================= -->
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-eyebrow">
+      <span class="live-dot"></span>
+      Open to remote opportunities
+    </div>
+    <h1>Jonathan<br><em>Hinds</em></h1>
+    <p class="hero-sub">
+      <strong>Cloud & DevOps Engineer</strong> — building and running production AWS infrastructure.
+      EC2, Docker, S3, ALB, Lambda, Terraform, GitHub Actions — designed, deployed, and operated by me.
+      Based in Bangkok. Remote-only.
+    </p>
+    <div class="hero-chips">
+      <span class="chip hi">AWS</span>
+      <span class="chip hi">Docker</span>
+      <span class="chip hi">Terraform</span>
+      <span class="chip hi">CI/CD</span>
+      <span class="chip hi">Linux</span>
+      <span class="chip hi">Serverless</span>
+      <span class="chip">🇬🇧 → 🇹🇭 Bangkok</span>
+      <span class="chip">Remote-only</span>
+    </div>
+  </header>
 
-<div id="visitor-counter-wrapper" style="text-align:center;margin:40px 0;">
-  <div style="font-size:14px;opacity:0.7;">Visitor Counter</div>
+  <!-- ABOUT -->
+  <div class="sec">
+    <div class="sec-label">About</div>
+    <div class="about-grid">
 
-  <div id="count" style="font-size:32px;font-weight:bold;">—</div>
+      <div class="acard">
+        <div class="acard-icon">🚛 → ☁️</div>
+        <div class="acard-title">The background</div>
+        <div class="acard-body">
+          Ten years driving HGVs across London — Category C, since 2014.
+          That environment drills one thing into you: <strong>follow process precisely, or things fail fast.</strong>
+          Turns out that transfers directly to infrastructure engineering.
+        </div>
+      </div>
 
-  <div id="status" style="font-size:12px;opacity:0.6;">
-    Loading
+      <div class="acard">
+        <div class="acard-icon">⚡</div>
+        <div class="acard-title">Why cloud</div>
+        <div class="acard-body">
+          After losing my father in 2024, I moved to Thailand and made a deliberate call — build a career with no ceiling and no geography.
+          <strong>Cloud engineering matched both.</strong> So I built real systems and learned fast.
+        </div>
+      </div>
+
+      <div class="acard span2">
+        <div class="acard-icon">🔧</div>
+        <div class="acard-title">How I operate</div>
+        <div class="acard-body">
+          I've debugged misconfigured security groups, fixed broken IAM permissions, and recovered failed deployments —
+          all on live infrastructure, not sandboxes. When something breaks: isolate, trace, fix. No guessing.
+          I use AI as a force multiplier for research and iteration, but I need to
+          <strong>understand the system end-to-end</strong> before I'm done.
+          Green in years — not in how I think.
+        </div>
+      </div>
+
+    </div>
   </div>
+
+  <!-- STACK -->
+  <div class="sec">
+    <div class="sec-label">Stack</div>
+
+    <div class="stack-group">
+      <div class="stack-group-label">Deployed & running in production</div>
+      <div class="tags">
+        <span class="tag live">AWS EC2</span>
+        <span class="tag live">S3</span>
+        <span class="tag live">ALB</span>
+        <span class="tag live">Lambda</span>
+        <span class="tag live">API Gateway</span>
+        <span class="tag live">DynamoDB</span>
+        <span class="tag live">Route 53</span>
+        <span class="tag live">IAM</span>
+        <span class="tag live">Docker</span>
+        <span class="tag live">GitHub Actions</span>
+        <span class="tag live">Terraform</span>
+        <span class="tag live">Linux / Bash</span>
+      </div>
+    </div>
+
+    <div class="stack-group">
+      <div class="stack-group-label">Building depth in</div>
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">CloudWatch</span>
+        <span class="tag">ECS / Fargate</span>
+        <span class="tag">Ansible</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIVE SYSTEMS -->
+  <div class="sec">
+    <div class="sec-label">Live production systems</div>
+    <div class="systems">
+
+      <a class="sys" href="https://www.jonsec.cloud/" target="_blank" rel="noopener">
+        <div class="sys-l">
+          <div class="sys-indicator green"></div>
+          <div>
+            <div class="sys-name">Portfolio Site — S3 Static Hosting</div>
+            <div class="sys-meta">jonsec.cloud · Route 53 · Custom domain · You are here</div>
+          </div>
+        </div>
+        <div class="sys-arr">→</div>
+      </a>
+
+      <a class="sys" href="https://api.jonsec.cloud/" target="_blank" rel="noopener">
+        <div class="sys-l">
+          <div class="sys-indicator green"></div>
+          <div>
+            <div class="sys-name">Visitor Counter API — Serverless</div>
+            <div class="sys-meta">api.jonsec.cloud · API Gateway → Lambda → DynamoDB</div>
+          </div>
+        </div>
+        <div class="sys-arr">→</div>
+      </a>
+
+      <a class="sys" href="http://ec2.jonsec.cloud/" target="_blank" rel="noopener">
+        <div class="sys-l">
+          <div class="sys-indicator green"></div>
+          <div>
+            <div class="sys-name">EC2 Application — Dockerised Flask</div>
+            <div class="sys-meta">ec2.jonsec.cloud · Linux EC2 · Containerised deployment</div>
+          </div>
+        </div>
+        <div class="sys-arr">→</div>
+      </a>
+
+      <a class="sys" href="http://alb.jonsec.cloud/" target="_blank" rel="noopener">
+        <div class="sys-l">
+          <div class="sys-indicator green"></div>
+          <div>
+            <div class="sys-name">Application Load Balancer</div>
+            <div class="sys-meta">alb.jonsec.cloud · ALB → EC2 target group · Health-checked backend</div>
+          </div>
+        </div>
+        <div class="sys-arr">→</div>
+      </a>
+
+      <a class="sys" href="https://github.com/JonSec88/cloud-portfolio-aws-devops" target="_blank" rel="noopener">
+        <div class="sys-l">
+          <div class="sys-indicator purple"></div>
+          <div>
+            <div class="sys-name">GitHub — Full Source + CI/CD + Terraform IaC</div>
+            <div class="sys-meta">GitHub Actions pipeline · main.tf · Screenshots & full documentation</div>
+          </div>
+        </div>
+        <div class="sys-arr">→</div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- VISITOR COUNTER -->
+  <div class="sec">
+    <div class="sec-label">Visitor counter</div>
+    <div class="counter-wrap">
+      <div id="count">—</div>
+      <div class="counter-r">
+        <div class="counter-title">Portfolio visits</div>
+        <div class="counter-arch">API Gateway → Lambda → DynamoDB · ap-southeast-2</div>
+        <div id="status">
+          <span class="status-dot" style="background:var(--muted)"></span>
+          Connecting...
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-l">
+      Jonathan Hinds · Cloud & DevOps Engineer<br>
+      Bangkok, Thailand · Open to remote roles globally
+    </div>
+    <div class="footer-links">
+      <a href="https://github.com/JonSec88/cloud-portfolio-aws-devops" target="_blank">GitHub</a>
+      <a href="https://api.jonsec.cloud/" target="_blank">API</a>
+    </div>
+  </footer>
+
 </div>
-
-<!-- ================= FOOTER ================= -->
-
-<footer class="footer">
-  <div class="footer-left">
-    Jonathan Hinds · Bangkok, Thailand · Open to remote offers
-  </div>
-
-  <div class="footer-links">
-    <a href="https://github.com/JonSec88/cloud-portfolio-aws-devops" target="_blank">
-      GitHub
-    </a>
-  </div>
-</footer>
-
-</div>
-
-<!-- ================= FINAL WORKING COUNTER SCRIPT ================= -->
 
 <script>
-document.addEventListener("DOMContentLoaded", async () => {
+  // api.jonsec.cloud returns { "visits": N }
+  const API = "https://api.jonsec.cloud/";
 
-  const API = "https://api.jonsec.cloud";
+  function setStatus(state, text) {
+    const el = document.getElementById("status");
+    el.className = state;
+    const c = { ok: "var(--green)", err: "#ef4444", "": "var(--muted)" };
+    el.innerHTML = `<span class="status-dot" style="background:${c[state] || c[""]}"></span>${text}`;
+  }
 
-  const countEl = document.getElementById("count");
-  const statusEl = document.getElementById("status");
+  async function fetchCount() {
+    try {
+      const res  = await fetch(API, { cache: "no-store" });
+      const text = await res.text();
+      let visits;
 
-  if (!count
+      try {
+        const data = JSON.parse(text);
+        // api.jonsec.cloud → { "visits": N }
+        // fallback for old { "count": N } or nested body
+        if (data.visits !== undefined)     visits = data.visits;
+        else if (data.count !== undefined) visits = data.count;
+        else if (data.body) {
+          const b = typeof data.body === "string" ? JSON.parse(data.body) : data.body;
+          visits = b?.visits ?? b?.count;
+        }
+      } catch (_) {
+        const n = parseInt(text, 10);
+        if (!isNaN(n)) visits = n;
+      }
+
+      if (visits !== undefined) {
+        document.getElementById("count").innerText = visits;
+        setStatus("ok", "Live · refreshes every 15s");
+      } else {
+        throw new Error("Unrecognised format: " + text);
+      }
+    } catch (err) {
+      document.getElementById("count").innerText = "—";
+      setStatus("err", "Counter unavailable");
+      console.error("[counter]", err);
+    }
+  }
+
+  fetchCount();
+  setInterval(fetchCount, 15000);
+</script>
+
+</body>
+</html>

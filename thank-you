@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You — Lockout London</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- ════════════════════════════════════════════
+       FACEBOOK PIXEL — Base Code
+       Replace YOUR_PIXEL_ID with your actual Pixel ID
+  ════════════════════════════════════════════ -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', 'YOUR_PIXEL_ID');   // ← replace with your Pixel ID
+    fbq('track', 'PageView');
+
+    // Lead conversion event — fires on page load
+    // Value and currency are optional but strongly recommended
+    // for Facebook's value-based optimisation
+    fbq('track', 'Lead', {
+      value: 75.00,        // estimated average job value in GBP
+      currency: 'GBP',
+      content_name: 'Auto Locksmith Enquiry',
+      content_category: 'Locksmith Service'
+    });
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=Lead&noscript=1"/>
+  </noscript>
+  <!-- End Facebook Pixel Code -->
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:       #0f0f0f;
+      --mid:       #3a3a3a;
+      --muted:     #767676;
+      --rule:      #e2e2e2;
+      --bg:        #f9f8f6;
+      --card:      #ffffff;
+      --amber:     #f5a623;
+      --amber-dim: #fdf3e0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── TOP BAR ── */
+    .topbar {
+      border-bottom: 1px solid var(--rule);
+      padding: 14px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--card);
+    }
+
+    .topbar-brand {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.05rem;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .topbar-brand::before {
+      content: '🔑';
+      font-size: 1rem;
+    }
+
+    .topbar-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* ── MAIN ── */
+    main {
+      flex: 1;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 64px 32px 80px;
+      width: 100%;
+    }
+
+    /* ── CONFIRMATION HEADER ── */
+    .confirm-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #2a7a4b;
+      background: #e8f7ef;
+      border: 1px solid #b6e0c8;
+      padding: 7px 14px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+    }
+
+    .confirm-badge::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #2a7a4b;
+      flex-shrink: 0;
+    }
+
+    .confirm-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2rem, 6vw, 3rem);
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+      margin-bottom: 16px;
+    }
+
+    .confirm-sub {
+      font-size: 1rem;
+      color: var(--mid);
+      max-width: 420px;
+      margin-bottom: 40px;
+      line-height: 1.65;
+    }
+
+    /* ── NEXT STEPS CARD ── */
+    .next-card {
+      background: var(--ink);
+      color: #fff;
+      border-radius: 12px;
+      padding: 36px;
+      margin-bottom: 32px;
+    }
+
+    .next-card-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 20px;
+    }
+
+    .next-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .next-step {
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .next-step-num {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--amber);
+      background: rgba(245,166,35,0.15);
+      width: 36px;
+      height: 36px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      letter-spacing: 0.04em;
+    }
+
+    .next-step-text strong {
+      display: block;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+
+    .next-step-text span {
+      font-size: 0.85rem;
+      color: #888;
+      line-height: 1.55;
+    }
+
+    /* ── TRUST GRID ── */
+    .trust-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 32px;
+    }
+
+    .trust-cell {
+      background: var(--card);
+      padding: 22px 20px;
+    }
+
+    .trust-cell-icon {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .trust-cell-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+    }
+
+    .trust-cell-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* ── WHATSAPP NUDGE ── */
+    .wa-nudge {
+      background: var(--amber-dim);
+      border: 1px solid #f0d598;
+      border-radius: 10px;
+      padding: 24px 26px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .wa-nudge-text strong {
+      display: block;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.97rem;
+      letter-spacing: -0.01em;
+      margin-bottom: 3px;
+    }
+
+    .wa-nudge-text span {
+      font-size: 0.84rem;
+      color: var(--mid);
+    }
+
+    .btn-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: var(--amber);
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.88rem;
+      padding: 12px 22px;
+      border-radius: 7px;
+      white-space: nowrap;
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+
+    .btn-wa:hover { opacity: 0.85; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-copy {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    .footer-link {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      border-bottom: 1px solid var(--rule);
+      transition: color 0.15s;
+    }
+
+    .footer-link:hover { color: var(--ink); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .topbar { padding: 14px 20px; }
+      main { padding: 48px 20px 64px; }
+      .trust-grid { grid-template-columns: 1fr; }
+      .next-card { padding: 28px 22px; }
+      footer { padding: 20px; flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <a class="topbar-brand" href="/">Lockout London</a>
+    <span class="topbar-tag">Enquiry Received</span>
+  </header>
+
+  <main>
+
+    <!-- CONFIRMATION -->
+    <div class="confirm-badge">Enquiry received</div>
+    <h1 class="confirm-title">We're on it.</h1>
+    <p class="confirm-sub">
+      Your message has been received. A member of our team will be in touch via WhatsApp shortly — 
+      usually within a few minutes.
+    </p>
+
+    <!-- NEXT STEPS -->
+    <div class="next-card">
+      <div class="next-card-eyebrow">What happens next</div>
+      <div class="next-steps">
+        <div class="next-step">
+          <div class="next-step-num">01</div>
+          <div class="next-step-text">
+            <strong>We'll send you a quote</strong>
+            <span>We'll message you on WhatsApp with a firm price based on your vehicle and location.</span>
+          </div>
+        </div>
+        <div class="next-step">
+          <div class="next-step-num">02</div>
+          <div class="next-step-text">
+            <strong>Confirm and we dispatch</strong>
+            <span>Happy with the price? Just say yes and we'll send the nearest locksmith straight to you.</span>
+          </div>
+        </div>
+        <div class="next-step">
+          <div class="next-step-num">03</div>
+          <div class="next-step-text">
+            <strong>Back in your car</strong>
+            <span>Most jobs are completed in under 30 minutes. No fix, no fee.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TRUST SIGNALS -->
+    <div class="trust-grid">
+      <div class="trust-cell">
+        <span class="trust-cell-icon">🔒</span>
+        <div class="trust-cell-title">No fix, no fee</div>
+        <p class="trust-cell-desc">If we can't open it, you don't pay. Simple.</p>
+      </div>
+      <div class="trust-cell">
+        <span class="trust-cell-icon">⚡</span>
+        <div class="trust-cell-title">Fast response</div>
+        <p class="trust-cell-desc">We aim to be with you within the hour across London.</p>
+      </div>
+      <div class="trust-cell">
+        <span class="trust-cell-icon">🚗</span>
+        <div class="trust-cell-title">All makes &amp; models</div>
+        <p class="trust-cell-desc">From hatchbacks to vans — we carry the kit for every job.</p>
+      </div>
+      <div class="trust-cell">
+        <span class="trust-cell-icon">📍</span>
+        <div class="trust-cell-title">All London postcodes</div>
+        <p class="trust-cell-desc">Central, North, South, East, West and Greater London covered.</p>
+      </div>
+    </div>
+
+    <!-- WHATSAPP NUDGE -->
+    <div class="wa-nudge">
+      <div class="wa-nudge-text">
+        <strong>Need to reach us urgently?</strong>
+        <span>Message us directly on WhatsApp — +44 7438 203406</span>
+      </div>
+      <a class="btn-wa" href="https://wa.me/447438203406">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.562 4.14 1.54 5.875L.057 23.3a.75.75 0 0 0 .916.96l5.65-1.48A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.712 9.712 0 0 1-4.946-1.352l-.355-.212-3.682.964.983-3.588-.232-.369A9.712 9.712 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
+        </svg>
+        Open WhatsApp
+      </a>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-copy">&copy; 2026 Lockout London &nbsp;·&nbsp; Mobile Auto Locksmith &nbsp;·&nbsp; London &amp; Surrounding Areas</span>
+    <a class="footer-link" href="/privacy-policy.html">Privacy Policy</a>
+  </footer>
+
+</body>
+</html>

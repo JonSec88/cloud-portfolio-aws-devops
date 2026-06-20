@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Lockout London</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:       #0f0f0f;
+      --mid:       #3a3a3a;
+      --muted:     #767676;
+      --rule:      #e2e2e2;
+      --bg:        #f9f8f6;
+      --card:      #ffffff;
+      --amber:     #f5a623;
+      --amber-dim: #fdf3e0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── TOP BAR ── */
+    .topbar {
+      border-bottom: 1px solid var(--rule);
+      padding: 14px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--card);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .topbar-brand {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.05rem;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .topbar-brand::before {
+      content: '🔑';
+      font-size: 1rem;
+    }
+
+    .topbar-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 64px 32px 48px;
+      max-width: 760px;
+      margin: 0 auto;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .hero-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 2px;
+      background: var(--amber);
+      flex-shrink: 0;
+    }
+
+    .hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      margin-bottom: 20px;
+    }
+
+    .hero-meta {
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-family: 'DM Mono', monospace;
+    }
+
+    .hero-summary {
+      margin-top: 24px;
+      padding: 20px 24px;
+      background: var(--amber-dim);
+      border-left: 3px solid var(--amber);
+      border-radius: 0 6px 6px 0;
+      font-size: 0.95rem;
+      color: var(--mid);
+      line-height: 1.65;
+    }
+
+    /* ── CONTENT ── */
+    .content {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 32px 80px;
+    }
+
+    .section {
+      padding: 44px 0 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .section:last-child {
+      border-bottom: none;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .section-number {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--amber);
+      background: var(--amber-dim);
+      padding: 4px 8px;
+      border-radius: 4px;
+      flex-shrink: 0;
+      margin-top: 5px;
+      letter-spacing: 0.06em;
+    }
+
+    .section h2 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+
+    .section p {
+      color: var(--mid);
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+
+    .section p:last-child {
+      margin-bottom: 44px;
+    }
+
+    /* ── DATA TABLE ── */
+    .data-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 44px;
+    }
+
+    .data-cell {
+      background: var(--card);
+      padding: 16px 20px;
+    }
+
+    .data-cell-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 5px;
+    }
+
+    .data-cell-value {
+      font-size: 0.92rem;
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    /* ── PURPOSE LIST ── */
+    .purpose-list {
+      list-style: none;
+      margin-bottom: 44px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .purpose-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.94rem;
+      color: var(--mid);
+      padding: 14px 18px;
+      background: var(--card);
+      border: 1px solid var(--rule);
+      border-radius: 7px;
+    }
+
+    .purpose-list li::before {
+      content: '→';
+      color: var(--amber);
+      flex-shrink: 0;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.85rem;
+      margin-top: 1px;
+    }
+
+    /* ── CONTACT BLOCK ── */
+    .contact-block {
+      margin-bottom: 44px;
+      background: var(--ink);
+      color: #fff;
+      border-radius: 10px;
+      padding: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .contact-block-left p:first-child {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: #fff;
+    }
+
+    .contact-block-left p:last-child {
+      font-size: 0.85rem;
+      color: #a8a8a8;
+      margin-bottom: 0;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--amber);
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 12px 22px;
+      border-radius: 6px;
+      white-space: nowrap;
+      transition: opacity 0.15s;
+    }
+
+    .contact-link:hover { opacity: 0.85; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 24px 32px;
+      text-align: center;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .topbar { padding: 14px 20px; }
+      .hero, .content { padding-left: 20px; padding-right: 20px; }
+      .data-grid { grid-template-columns: 1fr; }
+      .contact-block { flex-direction: column; align-items: flex-start; }
+      footer { padding: 20px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <a class="topbar-brand" href="/">Lockout London</a>
+    <span class="topbar-tag">Privacy Policy</span>
+  </header>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-eyebrow">Legal &amp; Privacy</div>
+    <h1>Your data.<br>Clear and simple.</h1>
+    <p class="hero-meta">Last updated: June 2026</p>
+    <div class="hero-summary">
+      Lockout London provides mobile auto locksmith services across London and the surrounding areas. 
+      This page explains what information we collect when you contact us, why we need it, 
+      and how it is handled. We do not sell your data, and we only use it to get your vehicle 
+      open as quickly as possible.
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <main class="content">
+
+    <!-- 1. What we collect -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-number">01</span>
+        <h2>Information We Collect</h2>
+      </div>
+      <p>When you submit a quote request or contact form, we collect the following details to process your job:</p>
+      <div class="data-grid">
+        <div class="data-cell">
+          <div class="data-cell-label">Full Name</div>
+          <div class="data-cell-value">To address and identify you</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-cell-label">Phone Number</div>
+          <div class="data-cell-value">To reach you about the job</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-cell-label">Vehicle Details</div>
+          <div class="data-cell-value">Make, model, year</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-cell-label">Location / Postcode</div>
+          <div class="data-cell-value">To dispatch to you</div>
+        </div>
+        <div class="data-cell" style="grid-column: 1 / -1;">
+          <div class="data-cell-label">Service Request Details</div>
+          <div class="data-cell-value">Description of your lockout or key issue</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. How we use it -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-number">02</span>
+        <h2>How We Use Your Information</h2>
+      </div>
+      <p>Your information is used only for the purposes below. We do not use it for marketing and we do not sell it to anyone.</p>
+      <ul class="purpose-list">
+        <li>Responding to your locksmith service request</li>
+        <li>Arranging dispatch of a qualified locksmith to your location</li>
+        <li>Contacting you by phone or WhatsApp to confirm or update your booking</li>
+        <li>Following up on your enquiry if we missed each other</li>
+      </ul>
+    </div>
+
+    <!-- 3. Data sharing -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-number">03</span>
+        <h2>Data Sharing</h2>
+      </div>
+      <p>
+        We work with a small network of trusted, vetted locksmith professionals across London. 
+        Where a job is fulfilled by one of these partners, we share only the information they 
+        need to complete it — your name, phone number, location, and vehicle details.
+      </p>
+      <p>
+        We do not share your data with any third party for advertising, analytics, or any 
+        purpose unrelated to your service request.
+      </p>
+    </div>
+
+    <!-- 4. Data retention -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-number">04</span>
+        <h2>Data Retention</h2>
+      </div>
+      <p>
+        We keep enquiry records for a limited period for operational purposes — for example, 
+        to follow up on open requests or handle any post-job queries. Once a job is complete 
+        and no longer relevant, records are deleted. We do not hold data longer than necessary.
+      </p>
+      <p>
+        You may request deletion of your data at any time by contacting us directly.
+      </p>
+    </div>
+
+    <!-- 5. Your rights -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-number">05</span>
+        <h2>Your Rights</h2>
+      </div>
+      <p>
+        Under UK data protection law (UK GDPR), you have the right to access, correct, or request 
+        deletion of any personal data we hold about you. If you'd like to exercise these rights, 
+        please get in touch via WhatsApp and we'll respond promptly.
+      </p>
+    </div>
+
+    <!-- 6. Contact -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-number">06</span>
+        <h2>Privacy Questions</h2>
+      </div>
+      <div class="contact-block">
+        <div class="contact-block-left">
+          <p>Get in touch with us directly</p>
+          <p>We aim to respond to all privacy queries within 48 hours.</p>
+        </div>
+        <a class="contact-link" href="https://wa.me/447438203406">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.562 4.14 1.54 5.875L.057 23.3a.75.75 0 0 0 .916.96l5.65-1.48A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.712 9.712 0 0 1-4.946-1.352l-.355-.212-3.682.964.983-3.588-.232-.369A9.712 9.712 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
+          </svg>
+          WhatsApp Us
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    &copy; 2026 Lockout London &nbsp;·&nbsp; Mobile Auto Locksmith &nbsp;·&nbsp; London &amp; Surrounding Areas
+  </footer>
+
+</body>
+</html>
